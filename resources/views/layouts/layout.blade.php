@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>INICIO</title>
     <link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -39,7 +39,7 @@
                 <ul>
                     <li><a href="#" class="nav-link scrollto active"><i class="bx bi-file-person"></i>
                             <span>Personal</span></a></li>
-                    <li><a href="#" class="nav-link scrollto"><i class="bx bi-box-seam"></i> 
+                    <li><a href="layout/index" class="nav-link scrollto"><i class="bx bi-box-seam"></i> 
                         <span>Almacen</span></a>
                     </li>
                     <li><a href="#" class="nav-link scrollto"><i class="bx bx-user"></i>
@@ -56,21 +56,11 @@
     </header>
 
 
-{{-- <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Alex Smith</h1>
-      <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
-    </div>
-  </section><!-- End Hero --> --}}
-
-
-
 
 
 
   <main id="main">
-
+    @yield('content')
   </main>
 
 

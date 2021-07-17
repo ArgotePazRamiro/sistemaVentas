@@ -24,6 +24,10 @@ Route::get('/home',function(){
 Route::get('/layout',function(){
     return view('layouts/layout');
 });
+Route::get('/layout/index',function(){
+    return view('administrador/almacen/index');
+});
+
 /* Auth::routes();
  */
 /* Route::get('/home', 'HomeController@index')->name('home');
