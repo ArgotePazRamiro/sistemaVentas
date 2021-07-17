@@ -9,23 +9,25 @@
         <h2>ALMACEN</h2>
         <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
       </div>
-
             <div class="row">
-
                 <div class="col-lg-11 mt-5 mt-lg-0 d-flex align-items-stretch">
                     <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="form-group">
+                            <label for="name">NOMBRE COMPLETO</label>
+                            <input type="text" class="form-control" name="subject" id="subject" required>
+                        </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name">Your Name</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
+                                <label for="name">CARNET DE IDENTIDAD</label>
+                                <input type="numeric" name="name" class="form-control" id="name" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="name">Your Email</label>
+                                <label for="name">CELULAR</label>
                                 <input type="email" class="form-control" name="email" id="email" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name">Subject</label>
+                            <label for="name">NOMBRE COMPLETO</label>
                             <input type="text" class="form-control" name="subject" id="subject" required>
                         </div>
                         <div class="form-group">
@@ -41,9 +43,7 @@
                     </form>
                 </div>
             </div>
-
         </div>
-    </section><!-- End About Section -->
-
+    </section><!-- End Section -->
 
 @endsection

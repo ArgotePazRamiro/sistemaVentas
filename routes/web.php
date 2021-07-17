@@ -25,7 +25,7 @@ Route::get('/layout',function(){
     return view('layouts/layout');
 });
 Route::get('/layout/index',function(){
-    return view('administrador/almacen/index');
+    return view('administrador/personal/index');
 });
 
 /* Auth::routes();
