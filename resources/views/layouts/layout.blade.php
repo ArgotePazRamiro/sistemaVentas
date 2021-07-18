@@ -37,12 +37,12 @@
 
             <nav id="navbar" class="nav-menu navbar">
                 <ul>
-                    <li><a href="index" class="nav-link scrollto active"><i class="bx bi-file-person"></i>
+                    <li><a href="{{route('personal.index')}}" class="nav-link scrollto active"><i class="bx bi-file-person"></i>
                             <span>Personal</span></a></li>
-                    <li><a href="#" class="nav-link scrollto"><i class="bx bi-box-seam"></i> 
+                    <li><a href="{{route('producto.index')}}" class="nav-link scrollto"><i class="bx bi-box-seam"></i> 
                         <span>Almacen</span></a>
                     </li>
-                    <li><a href="#" class="nav-link scrollto"><i class="bx bx-user"></i>
+                    <li><a href="{{route('cliente.index')}}" class="nav-link scrollto"><i class="bx bx-user"></i>
                             <span>Clientes</span></a></li>
                     <li><a href="#" class="nav-link scrollto"><i class="bx bx-book-content"></i>
                             <span>Ventas</span></a></li>

@@ -24,9 +24,21 @@ Route::get('/home',function(){
 Route::get('/layout',function(){
     return view('layouts/layout');
 });
-Route::get('/layout/index',function(){
+Route::get('/index',function(){
     return view('administrador/personal/index');
 });
+/* 
+Route::get('/personal','personalController@index')->name('personal.index');
+Route::get('/personal/crear','personalController@create')->name('personal.create');
+Route::get('/personal/{personal}/editar','personalController@edit')->name('personal.edit');
+Route::patch('/personal/{personal}','personalController@update')->name('personal.update');
+Route::post('/personal','personalController@store')->name('personal.store');
+Route::get('/personal/{personal}','personalController@show')->name('personal.show');
+Route::delete('/personal/{personal}','personalController@destroy')->name('personal.destroy'); */
+Route::resource('personal','personalController')->names('personal');
+Route::resource('cliente','clientesController')->names('cliente');
+Route::resource('producto','productosController')->names('producto');
+
 
 /* Auth::routes();
  */

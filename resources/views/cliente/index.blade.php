@@ -6,28 +6,28 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>PERSONAL</h2>
-                <a class="btn btn-primary mb-0" href="{{ route('personal.create') }}">
-                    Crear personal
+                <h2>cliente</h2>
+                <a class="btn btn-primary mb-0" href="{{ route('cliente.create') }}">
+                    Crear Cliente
                 </a>
             </div>
             <div>
                 <table class="table-dark">
 
-                    @forelse ($personal as $per)
+                    @forelse ($cliente as $cli)
                         <tr>
                             <th></th>
                             <li class=" list-group-item border-0 mb-3 shadow-sm">
                                 <a class="text-secondary d-flex justify-content-between align-items-center"
-                                    href="{{ route('personal.show', $per) }}">
+                                    href="{{ route('cliente.show', $cli) }}">
                                     <span class="font-weight-bold">
-                                        {{ $per->nombre }}
+                                        {{ $cli->nombre }}
                                     </span>
                                     <span class="font-weight-bold">
-                                        {{ $per->aPaterno }}
+                                        {{ $cli->aPaterno }}
                                     </span>
                                     <span class="font-weight-bold">
-                                        {{ $per->aMaterno }}
+                                        {{ $cli->aMaterno }}
                                     </span>
                                 </a>
                             </li>
@@ -36,7 +36,7 @@
                                 no hay archivos
                             </li>
                     @endforelse
-                    {{ $personal->links() }}
+                    {{ $cliente->links() }}
                     </tr>
                 </table>
             </div>
