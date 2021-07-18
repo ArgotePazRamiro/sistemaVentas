@@ -14,17 +14,17 @@
     <link href="{{asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
     
-    <link href="{{asset('css/index.css')}}" rel="stylesheet">
+    <link href="{{asset('css/home.css')}}" rel="stylesheet">
 
 </head>
 <body>
     <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <a href="#" class="hero-logo" data-aos="zoom-in"><img src="assets/img/hero-logo.png" alt=""></a>
-      <h1 data-aos="zoom-in"> BACK CELL</h1>
-      <h2 data-aos="fade-up">asodjaosdhoasj</h2>
-      <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started scrollto">INICIAR SESION</a>
+      <a href="#" class="hero-logo" data-aos="zoom-in"><img src="{{asset('img/logo_recatngular-removebg-preview.png')}}" alt=""></a>
+     
+{{--       <h2 data-aos="fade-up">asodjaosdhoasj</h2>--}}
+      <a data-aos="fade-up" data-aos-delay="200" href="#" class="btn-get-started scrollto">INICIAR SESION</a>
     </div>
   </section><!-- End Hero -->
 

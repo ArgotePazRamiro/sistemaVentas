@@ -11,33 +11,61 @@
                     Crear personal
                 </a>
             </div>
-            <div>
-                <table class="table-dark">
-
-                    @forelse ($personal as $per)
-                        <tr>
-                            <th></th>
-                            <li class=" list-group-item border-0 mb-3 shadow-sm">
-                                <a class="text-secondary d-flex justify-content-between align-items-center"
-                                    href="{{ route('personal.show', $per) }}">
+            <div class="col-lg-12 d-flex align-items-stretch">
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr class="">
+                                <th>Nombre</th>
+                                <th>Apellido Paterno</th>
+                                <th>Apellido Materno</th>
+                                <th>Celular</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        @forelse ($personal as $per)
+                        <tbody>
+                            <tr>
+                                <th>
                                     <span class="font-weight-bold">
-                                        {{ $per->nombre }}
+                                            {{ $per->nombre }}
                                     </span>
+                                </th>
+                                <th>
                                     <span class="font-weight-bold">
                                         {{ $per->aPaterno }}
                                     </span>
+                                </th>
+                                <th>
                                     <span class="font-weight-bold">
                                         {{ $per->aMaterno }}
                                     </span>
-                                </a>
-                            </li>
-                        @empty
-                            <li class="list-group-item border-0 mb-3 shadow-sm">
-                                no hay archivos
-                            </li>
-                    @endforelse
-                    {{ $personal->links() }}
-                    </tr>
+                                </th>
+                                <th>
+                                    <span class="font-weight-bold">
+                                        {{ $per->celular }}
+                                    </span>
+                                </th>
+                                <th>
+                                    
+                                </th>
+
+                            </tr>
+                        </tbody>
+
+                        
+                    @empty
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <li class="list-group-item border-0 mb-3 shadow-sm">
+                                        no hay archivos
+                                    </li>
+                                </th>
+                            </tr>
+                        </tbody>
+                @endforelse
+                {{ $personal->links() }}
+
                 </table>
             </div>
 
