@@ -4,49 +4,61 @@
 
     <section id="formulario" class="formulario">
         <div class="container">
-
             <div class="section-title">
-                <h2>PERSONAL</h2>
-                <a class="btn btn-primary mb-0" href="{{ route('personal.create') }}">
-                    Crear personal
+                <h2>VENTAS</h2>
+                <a class="btn btn-primary mb-0" href="{{ route('ventas.create') }}">
+                    CREAR VENTA
                 </a>
             </div>
             <div class="col-lg-11 d-flex align-items-stretch">
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th class="th">Nombre</th>
-                                <th class="th">Apellido Paterno</th>
-                                <th class="th">Apellido Materno</th>
-                                <th class="th">Celular</th>
+                                <th class="th">Movimiento</th>
+                                <th class="th">SubTotal</th>
+                                <th class="th">Descuento</th>
+                                <th class="th">Cantidad</th>
+                                <th class="th">Total</th>
+                                
+                                <th class="th">Cliente</th>
                                 <th> </th>
                             </tr>
                         </thead>
-                        @forelse ($personal as $per)
+                        @forelse ($ventas as $ven)
                         <tbody>
                             <tr class="table-active">
                                 <th>
                                     <span class="font-weight-bold">
-                                            {{ $per->nombre }}
+                                            {{ $ven->movimiento }}
                                     </span>
                                 </th>
                                 <th>
                                     <span class="font-weight-bold">
-                                        {{ $per->aPaterno }}
+                                        {{ $ven->subtotal }}
                                     </span>
                                 </th>
                                 <th>
                                     <span class="font-weight-bold">
-                                        {{ $per->aMaterno }}
+                                        {{ $ven->descuento }}
                                     </span>
                                 </th>
                                 <th>
                                     <span class="font-weight-bold">
-                                        {{ $per->celular }}
+                                        {{ $ven->cantidad }}
                                     </span>
                                 </th>
                                 <th>
-                                    <a href="{{route('personal.show',$per)}}"><i class="bi bi-eye-fill"></i></a>
+                                    <span class="font-weight-bold">
+                                        {{ $ven->total }}
+                                    </span>
+                                </th>
+                                <th>
+                                    <span class="font-weight-bold">
+                                        {{ $ven->cliente_id }}
+                                    </span>
+                                </th>
+                                <th>
+                                    <a href="{{route('personal.show',$ven)}}"><i class="bi bi-eye-fill"></i></a>
                                 </th>
 
                             </tr>
@@ -57,14 +69,14 @@
                         <tbody>
                             <tr>
                                 <th>
-                                    <span class="list-group-item border-0 mb-3 shadow-sm">
+                                    <li class="list-group-item border-0 mb-3 shadow-sm">
                                         no hay archivos
-                                    </span>
+                                    </li>
                                 </th>
                             </tr>
                         </tbody>
                 @endforelse
-                {{ $personal->links() }}
+                {{ $ventas->links() }}
 
                 </table>
             </div>

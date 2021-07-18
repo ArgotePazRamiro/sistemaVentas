@@ -18,6 +18,7 @@ class CreateVentasTable extends Migration
             $table->string('movimiento');
             $table->double('subtotal', 10, 2);
             $table->double('descuento', 10, 2);
+            $table->integer('cantidad');
             $table->double('total', 10, 2);
 
             $table->integer('cliente_id')->unsigned()->nullable();

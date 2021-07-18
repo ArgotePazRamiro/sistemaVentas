@@ -38,6 +38,8 @@ Route::delete('/personal/{personal}','personalController@destroy')->name('person
 Route::resource('personal','personalController')->names('personal');
 Route::resource('cliente','clientesController')->names('cliente');
 Route::resource('producto','productosController')->names('producto');
+Route::resource('ventas','ventasController')->names('ventas');
+
 
 
 /* Auth::routes();
