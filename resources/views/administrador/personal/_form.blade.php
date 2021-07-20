@@ -49,6 +49,6 @@
 
 <div class="text-center">
     <br>
-    <button type="submit" class="btn  btn-lg btn-block">GUARDAR</button>
+    <button type="submit" class="btn btn-lg btn-block">GUARDAR</button>
 </div>
 

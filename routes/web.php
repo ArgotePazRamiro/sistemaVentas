@@ -13,20 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home',function(){
+Route::get('/',function(){
     return view('home');
 });
 
 Route::get('/layout',function(){
     return view('layouts/layout');
 });
-Route::get('/index',function(){
-    return view('administrador/personal/index');
-});
+
 /* 
 Route::get('/personal','personalController@index')->name('personal.index');
 Route::get('/personal/crear','personalController@create')->name('personal.create');
@@ -43,6 +37,4 @@ Route::resource('ventas','ventasController')->names('ventas');
 
 
 /* Auth::routes();
- */
-/* Route::get('/home', 'HomeController@index')->name('home');
  */

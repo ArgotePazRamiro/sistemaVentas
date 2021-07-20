@@ -6,9 +6,9 @@
         <div class="container">
             <div class="section-title">
                 <h2>VENTAS</h2>
-                <a class="btn btn-primary mb-0" href="{{ route('ventas.create') }}">
+                <button type="submit" class="btn btn-lg btn-block" href="{{ route('ventas.create') }}">
                     CREAR VENTA
-                </a>
+                </button>
             </div>
             <div class="col-lg-11 d-flex align-items-stretch">
                     <table class="table table-dark">
