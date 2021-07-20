@@ -14,9 +14,11 @@ use Illuminate\Http\Request;
 class ventasController extends Controller
 {
     public function index(){
-        return view('ventas.index',[
-            'ventas'=>$ventas = Ventas::latest()->paginate(10)
-        ]);
+
+       $data=Ventas::join('clientes','clientes.id','=','ventas.cliente_id')
+                    ->select('ventas.*','clientes.nombre as nombreCliente','clientes.ci as CI')
+                    ->get();
+        return view('ventas.index',compact('data')); /* view ('ventas.index',compact('data')) */;
     }
     public function show(Ventas $ventas)
     {

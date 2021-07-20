@@ -45,7 +45,7 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <a href="{{route('personal.show',$per)}}"><i class="bi bi-eye-fill"></i></a>
+                                    <a href="{{route('personal.show',$per)}}"><div class="info"><i class="bi bi-eye-fill"></i></div></a>
                                 </th>
 
                             </tr>

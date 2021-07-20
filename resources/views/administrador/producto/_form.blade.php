@@ -14,6 +14,19 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="form-group col-md-6">
+        <label for="marca">MARCA</label>
+        <input type="text" class="form-control" name="marca" id="marca" value="{{ old('marca', $producto->marca)}}"required>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="nSerie">NUMERO DE SERIE</label>
+        <input type="numeric" name="nSerie" class="form-control" id="nSerie" value="{{ old('nSerie', $producto->nSerie)}}" required>
+    </div>
+    
+    
+</div>
+
 
 
 <div class="row">

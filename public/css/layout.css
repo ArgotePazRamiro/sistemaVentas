@@ -229,7 +229,19 @@ section {
     
     padding-bottom: 16px;
 }
-
+.formulario .info i {
+    font-size: 20px;
+    color: #1a8ec4;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #dff3fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+  }
 
 .formulario  .form-group {
     margin-bottom: 15px;
