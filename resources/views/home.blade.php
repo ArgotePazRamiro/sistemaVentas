@@ -23,9 +23,7 @@
     <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <a href="#" class="hero-logo" data-aos="zoom-in"><img src="{{asset('img/logo_recatngular-removebg-preview.png')}}" alt=""></a>
-     
-{{--       <h2 data-aos="fade-up">asodjaosdhoasj</h2>--}}
+      <img class="hero-logo" data-aos="zoom-in" src="{{asset('img/logo_recatngular-removebg-preview.png')}}" alt="">
       <a data-aos="fade-up" data-aos-delay="200" {{-- href="{{route('')}} "--}} class="btn-get-started scrollto">INICIAR SESION</a>
     </div>
   </section><!-- End Hero -->
