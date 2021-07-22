@@ -23,6 +23,7 @@
     </header>
 
     <main id="main">
+        @include('partials.session-status') 
         @yield('content')
     </main>
 

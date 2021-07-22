@@ -11,7 +11,6 @@
             <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
             <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div> --}}
-
     </div>
 
     <nav id="navbar" class="nav-menu navbar">
@@ -23,7 +22,7 @@
             </li>
             <li class="{{setActive('cliente.index')}}"><a href="{{route('cliente.index')}}" class="nav-link scrollto"><i class="bx bx-user"></i>
                     <span>Clientes</span></a></li>
-            <li {{-- class="{{setActive('personal.index')}}" --}}><a href="#" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+            <li class="{{setActive('ventas.index')}}"><a href="{{route('ventas.index')}}" class="nav-link scrollto"><i class="bx bx-book-content"></i>
                     <span>Ventas</span></a></li>
             <li {{-- class="{{setActive('personal.index')}}" --}}><a href="#" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
                     <span>Registros</span></a></li>

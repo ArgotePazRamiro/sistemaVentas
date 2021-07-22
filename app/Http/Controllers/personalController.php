@@ -38,7 +38,7 @@ class personalController extends Controller
             'rol'=> 'null',
             'estado'=> '1'
         ]);
-        return redirect()->route('personal.index');
+        return redirect()->route('personal.index')->with('status','Se Guardo Exitosamente');
     }
     public function edit(users $personal){
 
@@ -61,12 +61,13 @@ class personalController extends Controller
             'estado'=> '1'
         ]);
 
-        return redirect()->route('personal.index', $personal);    } 
+        return redirect()->route('personal.index', $personal)->with('status','Se Actualizo Exitosamente');
+    }
     
     public function destroy(users $personal)
     {
         $personal->delete();
-        return redirect()->route('personal.index');
+        return redirect()->route('personal.index')->with('status','Se Elimino Exitosamente');
 
     }
 }
