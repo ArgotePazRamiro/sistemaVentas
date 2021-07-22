@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function(){
+
+Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/layout',function(){
-    return view('layouts/layout');
-});
 
-/* 
+
+//Dashboard
+Route::get('/dashboard',function(){
+    return view('layouts/layout');
+
+})->middleware('auth');
+
+
+Route::get('/index',function(){
+    return view('administrador/personal/index');
+});
+/*
+
 Route::get('/personal','personalController@index')->name('personal.index');
 Route::get('/personal/crear','personalController@create')->name('personal.create');
 Route::get('/personal/{personal}/editar','personalController@edit')->name('personal.edit');
@@ -36,5 +47,10 @@ Route::resource('ventas','ventasController')->names('ventas');
 
 
 
-/* Auth::routes();
- */
+Auth::routes();
+
+/*Lista de usuarios -> asignacion de rol */
+Route::resource('/user', UserController::class)->names('users');
+/*Rol */
+Route::resource('/role', roleController::class)->names('roles');
+

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Back cell</title>
+
  
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{{asset('vendor/aos/aos.css')}}" rel="stylesheet">
@@ -23,8 +24,12 @@
     <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <img class="hero-logo" data-aos="zoom-in" src="{{asset('img/logo_recatngular-removebg-preview.png')}}" alt="">
-      <a data-aos="fade-up" data-aos-delay="200" {{-- href="{{route('')}} "--}} class="btn-get-started scrollto">INICIAR SESION</a>
+
+      <a href="#" class="hero-logo" data-aos="zoom-in"><img src="{{asset('img/logo_recatngular-removebg-preview.png')}}" alt=""></a>
+
+{{--       <h2 data-aos="fade-up">asodjaosdhoasj</h2>--}}
+      <a data-aos="fade-up" data-aos-delay="200" href="{{ route('login') }}" class="btn-get-started scrollto">INICIAR SESION</a>
+
     </div>
   </section><!-- End Hero -->
 

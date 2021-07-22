@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{asset('vendor/glightbox/css/glightbox.min.css')}}">
     <link href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-
     <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
 </head>
 
@@ -35,13 +34,14 @@
     <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('vendor/purecounter/purecounter.js') }}"></script>    
+    <script src="{{ asset('vendor/purecounter/purecounter.js') }}"></script>
     <script src="{{ asset('vendor/typed.js/typed.min.js') }}"></script>
 
     <script src="{{ asset('vendor/waypoints/noframework.waypoints.js') }}"></script>
 
     <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('js/layout.js') }}"></script>
+    @yield('js')
 </body>
 
 </html>
