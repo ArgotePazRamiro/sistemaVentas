@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Productos;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProjectRequest;
 
 class productosController extends Controller
 {
@@ -25,18 +26,12 @@ class productosController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(CreateProjectRequest $request)
     {
-        $message = Productos:: create([
-            'nombre'=> request('nombre'),
-            'precioUnitario'=> request('precioUnitario'),
-            'stock'=> request('stock'),
-            'categoria'=> request('categoria'),
-            'precioComision'=> request('precioComision'),
-            'estado'=> '1'
-            
-        ]);
-        return redirect()->route('producto.index');
+
+        Productos::create($request->validated());
+        return redirect()->route('producto.index')->with('status','El proyecto fue creado con exito');
+
     }
     public function edit(Productos $producto){
 

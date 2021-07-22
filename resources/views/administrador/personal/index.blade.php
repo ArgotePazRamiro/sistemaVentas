@@ -7,12 +7,11 @@
 
             <div class="section-title">
                 <h2>PERSONAL</h2>
-                <a class="btn btn-primary mb-0" href="{{ route('personal.create') }}">
-                    Crear personal
+                <a href="{{ route('personal.create') }}" ><button type="submit"  class="btn btn-lg btn-block">CREAR PERSONAL</button>
                 </a>
             </div>
             <div class="col-lg-12 d-flex align-items-stretch">
-                    <table class="table table-dark table-striped">
+                    <table class="table table-dark">
                         <thead>
                             <tr class="">
                                 <th>Nombre</th>
@@ -51,8 +50,6 @@
 
                             </tr>
                         </tbody>
-
-                        
                     @empty
                         <tbody>
                             <tr>
