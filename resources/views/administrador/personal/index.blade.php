@@ -2,29 +2,28 @@
 
 @section('content')
 
-    <section id="contact" class="contact">
+    <section id="formulario" class="formulario">
         <div class="container">
 
             <div class="section-title">
                 <h2>PERSONAL</h2>
-                <a class="btn btn-primary mb-0" href="{{ route('personal.create') }}">
-                    Crear personal
+                <a href="{{ route('personal.create') }}"><button type="submit"  class="btn btn-lg btn-block">CREAR PERSONAL</button>
                 </a>
             </div>
-            <div class="col-lg-12 d-flex align-items-stretch">
-                    <table class="table table-dark table-striped">
+            <div class="col-lg-11 d-flex align-items-stretch">
+                    <table class="table table-dark">
                         <thead>
-                            <tr class="">
-                                <th>Nombre</th>
-                                <th>Apellido Paterno</th>
-                                <th>Apellido Materno</th>
-                                <th>Celular</th>
+                            <tr>
+                                <th class="th">Nombre</th>
+                                <th class="th">Apellido Paterno</th>
+                                <th class="th">Apellido Materno</th>
+                                <th class="th">Celular</th>
                                 <th> </th>
                             </tr>
                         </thead>
                         @forelse ($personal as $per)
                         <tbody>
-                            <tr>
+                            <tr class="table-active">
                                 <th>
                                     <span class="font-weight-bold">
                                             {{ $per->nombre }}
@@ -46,7 +45,7 @@
                                     </span>
                                 </th>
                                 <th>
-                                    
+                                    <a href="{{route('personal.show',$per)}}"><div class="info"><i class="bi bi-eye-fill"></i></div></a>
                                 </th>
 
                             </tr>
@@ -57,9 +56,9 @@
                         <tbody>
                             <tr>
                                 <th>
-                                    <li class="list-group-item border-0 mb-3 shadow-sm">
+                                    <span class="list-group-item border-0 mb-3 shadow-sm">
                                         no hay archivos
-                                    </li>
+                                    </span>
                                 </th>
                             </tr>
                         </tbody>

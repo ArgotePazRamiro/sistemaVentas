@@ -14,17 +14,17 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
 Route::get('/', function () {
     return view('home');
 });
 
-// Route::get('/home',function(){
-//     return view('home');
-// });
+
 
 //Dashboard
 Route::get('/dashboard',function(){
     return view('layouts/layout');
+
 })->middleware('auth');
 
 
@@ -32,6 +32,7 @@ Route::get('/index',function(){
     return view('administrador/personal/index');
 });
 /*
+
 Route::get('/personal','personalController@index')->name('personal.index');
 Route::get('/personal/crear','personalController@create')->name('personal.create');
 Route::get('/personal/{personal}/editar','personalController@edit')->name('personal.edit');
@@ -42,11 +43,9 @@ Route::delete('/personal/{personal}','personalController@destroy')->name('person
 Route::resource('personal','personalController')->names('personal');
 Route::resource('cliente','clientesController')->names('cliente');
 Route::resource('producto','productosController')->names('producto');
+Route::resource('ventas','ventasController')->names('ventas');
 
 
-
-/* Route::get('/home', 'HomeController@index')->name('home');
- */
 
 Auth::routes();
 
@@ -54,3 +53,4 @@ Auth::routes();
 Route::resource('/user', UserController::class)->names('users');
 /*Rol */
 Route::resource('/role', roleController::class)->names('roles');
+

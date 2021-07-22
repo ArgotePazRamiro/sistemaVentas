@@ -7,6 +7,8 @@
         
         <div class="row">
             <div class="col-lg-11 mt-5 mt-lg-0 d-flex align-items-stretch">
+                
+
                 <form action="{{route('personal.update',$personal)}}" method="POST" role="form" class="">
                     @method('PATCH')
                     <div class="section-title">

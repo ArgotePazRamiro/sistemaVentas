@@ -147,9 +147,7 @@ h6 {
     padding: 0 15px;
 }
 
-#hero .hero-logo {
-    margin-bottom: 30px;
-}
+
 
 #hero h1 {
     margin: 0 0 30px 0;
@@ -168,23 +166,22 @@ h6 {
 }
 
 #hero .btn-get-started {
-    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 800;
     font-size: 16px;
     letter-spacing: 1px;
     display: inline-block;
     padding: 14px 30px;
     border-radius: 20px;
     margin: 10px;
-    color: rgb(255, 255, 255);
-    background: #f7e925;
+    color: rgb(36, 36, 36);
+    background: #f1e645;
 }
 
 #hero .btn-get-started:hover {
-    transition: 0.5s;
+    transition: 0.6s;
     background: rgb(255, 255, 255);
-    color: #f7e925;
+    color: #615700;
 }
 
 

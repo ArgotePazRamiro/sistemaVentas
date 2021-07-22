@@ -30,6 +30,8 @@ class productosController extends Controller
         $message = Productos:: create([
             'nombre'=> request('nombre'),
             'precioUnitario'=> request('precioUnitario'),
+            'marca'=> request('marca'),
+            'nSerie'=> request('nSerie'),
             'stock'=> request('stock'),
             'categoria'=> request('categoria'),
             'precioComision'=> request('precioComision'),
