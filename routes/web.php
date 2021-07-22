@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,20 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home',function(){
     return view('home');
 });
 
-Route::get('/layout',function(){
+// Route::get('/home',function(){
+//     return view('home');
+// });
+
+//Dashboard
+Route::get('/dashboard',function(){
     return view('layouts/layout');
-});
+})->middleware('auth');
+
+
 Route::get('/index',function(){
     return view('administrador/personal/index');
 });
-/* 
+/*
 Route::get('/personal','personalController@index')->name('personal.index');
 Route::get('/personal/crear','personalController@create')->name('personal.create');
 Route::get('/personal/{personal}/editar','personalController@edit')->name('personal.edit');
@@ -40,7 +44,13 @@ Route::resource('cliente','clientesController')->names('cliente');
 Route::resource('producto','productosController')->names('producto');
 
 
-/* Auth::routes();
- */
+
 /* Route::get('/home', 'HomeController@index')->name('home');
  */
+
+Auth::routes();
+
+/*Lista de usuarios -> asignacion de rol */
+Route::resource('/user', UserController::class)->names('users');
+/*Rol */
+Route::resource('/role', roleController::class)->names('roles');
