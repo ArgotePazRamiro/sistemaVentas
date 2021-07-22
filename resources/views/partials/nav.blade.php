@@ -2,7 +2,7 @@
 
     <div class="profile">
         <br>
-        <h1 class="text-light"><a href="index.html">Alex Smith</a></h1>
+        <h1 class="text-light"><a href="index.html">{{ auth()->user()->nombre }}</a></h1>
 
         {{-- <div class="social-links mt-3 text-center">
             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -18,7 +18,7 @@
         <ul>
             <li class="{{setActive('personal.index')}}"><a href="{{route('personal.index')}}" class="nav-link scrollto "><i class="bx bi-file-person"></i>
                     <span>Personal</span></a></li>
-            <li class="{{setActive('producto.index')}}"><a href="{{route('producto.index')}}" class="nav-link scrollto"><i class="bx bi-box-seam"></i> 
+            <li class="{{setActive('producto.index')}}"><a href="{{route('producto.index')}}" class="nav-link scrollto"><i class="bx bi-box-seam"></i>
                 <span>Almacen</span></a>
             </li>
             <li class="{{setActive('cliente.index')}}"><a href="{{route('cliente.index')}}" class="nav-link scrollto"><i class="bx bx-user"></i>
@@ -29,6 +29,19 @@
                     <span>Registros</span></a></li>
             {{-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
                     <span>Contact</span></a></li> --}}
+            <li class="{{setActive('users.index')}}"><a href="{{route('users.index')}}" class="nav-link scrollto"><i class='bx bxs-user-detail' ></i>
+                <span>Asignar rol</span></a>
+            </li>
+            <li class="{{setActive('roles.index/*')}}"><a href="{{route('roles.index')}}" class="nav-link scrollto"><i class='bx bxs-key' ></i>
+                <span>Roles</span></a>
+            </li>
+            <li>
+                <a href="" class="nav-link scrollto" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class='bx bx-log-out-circle' ></i>Cerrar Session</a>
+            </li>
         </ul>
     </nav><!-- .nav-menu -->
 </div>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
