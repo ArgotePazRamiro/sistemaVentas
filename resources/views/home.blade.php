@@ -13,7 +13,7 @@
     <link href="{{asset('vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
-    
+
     <link href="{{asset('css/home.css')}}" rel="stylesheet">
 
 </head>
@@ -22,9 +22,9 @@
   <section id="hero">
     <div class="hero-container">
       <a href="#" class="hero-logo" data-aos="zoom-in"><img src="{{asset('img/logo_recatngular-removebg-preview.png')}}" alt=""></a>
-     
+
 {{--       <h2 data-aos="fade-up">asodjaosdhoasj</h2>--}}
-      <a data-aos="fade-up" data-aos-delay="200" href="#" class="btn-get-started scrollto">INICIAR SESION</a>
+      <a data-aos="fade-up" data-aos-delay="200" href="{{ route('login') }}" class="btn-get-started scrollto">INICIAR SESION</a>
     </div>
   </section><!-- End Hero -->
 
