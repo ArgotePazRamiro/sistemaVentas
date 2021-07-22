@@ -212,11 +212,17 @@ section {
 }
 
 /*--------------------------------------------------------------
-# formulario
---------------------------------------------------------------*/
-.formulario {
-    padding-bottom: 130px;
-    
+  # About
+  --------------------------------------------------------------*/
+.about .content h3 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #173b6c;
+}
+
+.formulario .th
+{
+    color:yellow;
 }
 
 
@@ -224,23 +230,12 @@ section {
 {
     color:yellow;
 }
-
-.formulario .form-group {
-    
-    padding-bottom: 16px;
-}
 .formulario .info i {
-    font-size: 20px;
-    color: #1a8ec4;
-    float: left;
-    width: 44px;
-    height: 44px;
-    background: #dff3fc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
+
+    color: #fffb00;
+    
+    width: 60px;
+    height: 60px;
   }
 
 .formulario  .form-group {
