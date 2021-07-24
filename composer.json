@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
         "laravelcollective/html": "^6.2",
+        "mike42/escpos-php": "^3.0",
         "spatie/laravel-permission": "^4.2"
     },
     "require-dev": {

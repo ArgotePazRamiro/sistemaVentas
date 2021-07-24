@@ -17,10 +17,10 @@
         <ul>
             <li class="{{setActive('personal.index')}}"><a href="{{route('personal.index')}}" class="nav-link scrollto "><i class="bx bi-file-person"></i>
                     <span>Personal</span></a></li>
-            <li class="{{setActive('producto.index')}}"><a href="{{route('producto.index')}}" class="nav-link scrollto"><i class="bx bi-box-seam"></i>
+            <li class="{{setActive('productos.index')}}"><a href="{{route('productos.index')}}" class="nav-link scrollto"><i class="bx bi-box-seam"></i>
                 <span>Almacen</span></a>
             </li>
-            <li class="{{setActive('cliente.index')}}"><a href="{{route('cliente.index')}}" class="nav-link scrollto"><i class="bx bx-user"></i>
+            <li class="{{setActive('clientes.index')}}"><a href="{{route('clientes.index')}}" class="nav-link scrollto"><i class="bx bx-user"></i>
                     <span>Clientes</span></a></li>
             <li class="{{setActive('ventas.index')}}"><a href="{{route('ventas.index')}}" class="nav-link scrollto"><i class="bx bx-book-content"></i>
                     <span>Ventas</span></a></li>

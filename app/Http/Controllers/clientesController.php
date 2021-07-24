@@ -2,64 +2,88 @@
 
 namespace App\Http\Controllers;
 
-use App\Clientes;
+use App\Cliente;
 use Illuminate\Http\Request;
 
-class clientesController extends Controller
+class ClientesController extends Controller
 {
-    public function index(){
-        return view('cliente.index',[
-            'cliente'=>$cliente = Clientes::latest()->paginate(10)
-        ]);
-    }
-    public function show(Clientes $cliente)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        return view('cliente.show',[
-            'cliente'=>$cliente
-        ]);
+        return view("clientes.index", ["clientes" => Cliente::all()]);
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('cliente.create',[
-            'cliente'=> new Clientes
-        ]);
+        return view("clientes.create");
     }
 
-    public function store()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        $message = Clientes:: create([
-            'nombre'=> request('nombre'),
-            'aPaterno'=> request('aPaterno'),
-            'aMaterno'=> request('aMaterno'),
-            'ci'=> request('ci'),
-            'celular'=> request('celular')
-            
-        ]);
-        return redirect()->route('cliente.index');
+        (new Cliente($request->input()))->saveOrFail();
+        return redirect()->route("clientes.index")->with("status", "Cliente agregado");
     }
-    public function edit(Clientes $cliente){
 
-        return view('cliente.edit',[
-            'cliente'=> $cliente
-        ]);
-    }
-    public function update(Clientes $cliente)
+    /**
+     * Display the specified resource.
+     *
+     * @param \App\Cliente $cliente
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Cliente $cliente)
     {
+        //
+    }
 
-        $cliente->update([
-            'nombre'=> request('nombre'),
-            'aPaterno'=> request('aPaterno'),
-            'aMaterno'=> request('aMaterno'),
-            'ci'=> request('ci'),
-            'celular'=> request('celular')
-        ]);
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param \App\Cliente $cliente
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Cliente $cliente)
+    {
+        return view("clientes.edit", ["cliente" => $cliente]);
+    }
 
-        return redirect()->route('cliente.index', $cliente);    } 
-    
-    public function destroy(Clientes $cliente)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Cliente $cliente
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Cliente $cliente)
+    {
+        $cliente->fill($request->input());
+        $cliente->saveOrFail();
+        return redirect()->route("clientes.index")->with("status", "Cliente actualizado");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param \App\Cliente $cliente
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Cliente $cliente)
     {
         $cliente->delete();
-        return redirect()->route('cliente.index');
-
+        return redirect()->route("clientes.index")->with("status", "Cliente eliminado");
     }
 }

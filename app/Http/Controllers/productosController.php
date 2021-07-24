@@ -2,61 +2,90 @@
 
 namespace App\Http\Controllers;
 
-use App\Productos;
+use App\Producto;
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateProjectRequest;
 
-class productosController extends Controller
+class ProductosController extends Controller
 {
-    public function index(){
-        return view('administrador.producto.index',[
-            'producto'=>$producto = Productos::latest()->paginate(10)
-        ]);
-    }
-    public function show(Productos $producto)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        return view('administrador.producto.show',[
-            'producto'=>$producto
-        ]);
+        return view("productos.index", ["productos" => Producto::all()]);
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('administrador.producto.create',[
-            'producto'=> new Productos
-        ]);
+        return view("productos.create");
     }
 
-    public function store(CreateProjectRequest $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-
-        Productos::create($request->validated());
-        return redirect()->route('producto.index')->with('status','El proyecto fue creado con exito');
-
+        $producto = new Producto($request->input());
+        $producto->saveOrFail();
+        return redirect()->route("productos.index")->with("status", "Producto guardado");
     }
-    public function edit(Productos $producto){
 
-        return view('administrador.producto.edit',[
-            'producto'=> $producto
-        ]);
-    }
-    public function update(Productos $producto)
+    /**
+     * Display the specified resource.
+     *
+     * @param \App\Producto $producto
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Producto $producto)
     {
+        //
+    }
 
-        $producto->update([
-            'nombre'=> request('nombre'),
-            'precioUnitario'=> request('precioUnitario'),
-            'stock'=> request('stock'),
-            'categoria'=> request('categoria'),
-            'precioComision'=> request('precioComision'),
-            'estado'=> '1'
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param \App\Producto $producto
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Producto $producto)
+    {
+        return view("productos.edit", ["producto" => $producto,
         ]);
+    }
 
-        return redirect()->route('producto.index', $producto);    } 
-    
-    public function destroy(Productos $producto)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Producto $producto
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Producto $producto)
+    {
+        $producto->fill($request->input());
+        $producto->saveOrFail();
+        return redirect()->route("productos.index")->with("status", "Producto actualizado");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param \App\Producto $producto
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Producto $producto)
     {
         $producto->delete();
-        return redirect()->route('producto.index');
-
+        return redirect()->route("productos.index")->with("status", "Producto eliminado");
     }
 }

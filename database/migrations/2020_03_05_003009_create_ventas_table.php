@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipodepagosTable extends Migration
+class CreateVentasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateTipodepagosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipodepagos', function (Blueprint $table) {
+        Schema::create('ventas', function (Blueprint $table) {
             $table->id();
-            $table->double('efectivo', 10, 2);
-            $table->double('transferencia', 10, 2);
-            $table->double('deposito', 10, 2);
-            $table->double('atc', 10, 2);
-            $table->double('credito', 10, 2);
+            
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateTipodepagosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipodepagos');
+        Schema::dropIfExists('ventas');
     }
 }

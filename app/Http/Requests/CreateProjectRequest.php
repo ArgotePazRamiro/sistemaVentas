@@ -17,25 +17,19 @@ class CreateProjectRequest extends FormRequest
     {
         return [
             'nombre'=>'required',
-            'precioUnitario'=>'required',
-            'marca'=>'required',
-            'nSerie'=>'required',
-            'stock'=>'required',
+            'precioUnitario'=>'numeric|required',
+            'marca'=>'numeric|required',
+            'nSerie'=>'numeric|required',
+            'stock'=>'numeric|required',
             'categoria'=>'required',
-            'precioComision'=>'required',
-            'estado'=>'1'
+            'precioComision'=>'numeric|required',
+            'estado'=>'required|boolean'
         ];
         
     }
     public function messages(){
         return [
-            'nombre.required'=>'ASD',
-            'precioUnitario.required'=>'El Proyecto necesita un ',
-            'marca.required'=>'El Proyecto necesita un nombre',
-            'stock.required'=>'El Proyecto necesita un nombre',
-            'nSerie.required'=>'El Proyecto necesita un nombre',
-            'categoria.required'=>'El Proyecto necesita un nombre',
-            'precioComision.required'=>'El Proyecto necesita un nombre',
+            
         ];
     }
 }

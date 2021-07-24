@@ -233,33 +233,25 @@ section {
 .formulario .info i {
 
     color: #fffb00;
-    
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
 
 .formulario  .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .formulario  label {
-    padding-bottom: 8px;
+    padding-bottom: 4px;
 }
 
-.formulario  input,
-.formulario  textarea {
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 14px;
-}
+
 
 .formulario  input {
-    height: 44px;
+    height: 40px;
+    border-radius: 10px;
 }
 
-.formulario  textarea {
-    padding: 10px 15px;
-}
 
 .formulario  button[type="submit"] {
     background: #f4f800;

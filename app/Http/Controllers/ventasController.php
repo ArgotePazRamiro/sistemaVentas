@@ -2,70 +2,140 @@
 
 namespace App\Http\Controllers;
 
-use App\Ventas;
-use App\users;
-use App\Productos;
-use App\Clientes;
-
-
-
+use App\Venta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
+use Mike42\Escpos\Printer;
 
-class ventasController extends Controller
+class VentasController extends Controller
 {
-    public function index(){
 
-       $data=Ventas::join('clientes','clientes.id','=','ventas.cliente_id')
-                    ->select('ventas.*','clientes.nombre as nombreCliente','clientes.ci as CI')
-                    ->get();
-        return view('ventas.index',compact('data')); /* view ('ventas.index',compact('data')) */;
-    }
-    public function show(Ventas $ventas)
+    public function ticket(Request $request)
     {
-        return view('ventas.show',[
-            'ventas'=>$ventas
-        ]);
+        return redirect()->back()->with("status", "Ticket impreso");
+
+        /* $venta = Venta::findOrFail($request->get("id"));
+        $nombreImpresora = env("NOMBRE_IMPRESORA");
+        $connector = new WindowsPrintConnector($nombreImpresora);
+        $impresora = new Printer($connector);
+        $impresora->setJustification(Printer::JUSTIFY_CENTER);
+        $impresora->setEmphasis(true);
+        $impresora->text("Ticket de venta\n");
+        $impresora->text($venta->created_at . "\n");
+        $impresora->setEmphasis(false);
+        $impresora->text("Cliente: ");
+        $impresora->text($venta->cliente->nombre . "\n");
+        $impresora->text("\nhttps://parzibyte.me/blog\n");
+        $impresora->text("\n===============================\n");
+        $total = 0;
+        foreach ($venta->productos as $producto) {
+            $subtotal = $producto->cantidad * $producto->precio;
+            $total += $subtotal;
+            $impresora->setJustification(Printer::JUSTIFY_LEFT);
+            $impresora->text(sprintf("%.2fx%s\n", $producto->cantidad, $producto->descripcion));
+            $impresora->setJustification(Printer::JUSTIFY_RIGHT);
+            $impresora->text('$' . number_format($subtotal, 2) . "\n");
+        }
+        $impresora->setJustification(Printer::JUSTIFY_CENTER);
+        $impresora->text("\n===============================\n");
+        $impresora->setJustification(Printer::JUSTIFY_RIGHT);
+        $impresora->setEmphasis(true);
+        $impresora->text("Total: $" . number_format($total, 2) . "\n");
+        $impresora->setJustification(Printer::JUSTIFY_CENTER);
+        $impresora->setTextSize(1, 1);
+        $impresora->text("Gracias por su compra\n");
+        $impresora->text("https://parzibyte.me/blog");
+        $impresora->feed(5);
+        $impresora->close(); */
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $ventasConTotales = Venta::join("productos_vendidos", "productos_vendidos.id_venta", "=", "ventas.id")
+            ->select("ventas.*", DB::raw("sum(productos_vendidos.cantidad * productos_vendidos.precio) as total"))
+            ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at", "ventas.id_cliente")
+            ->get();
+        return view("ventas.index", ["ventas" => $ventasConTotales,]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('ventas.create',[
-            'ventas'=> new Ventas
-        ]);
+        //
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        Ventas::craete($request->validated());
-        return redirect()->route('ventas.index')->with('status','Se Guardo Exitosamente');
+        //
     }
-    public function edit(Ventas $ventas){
 
-        return view('ventas.edit',[
-            'ventas'=> $ventas
+    /**
+     * Display the specified resource.
+     *
+     * @param \App\Venta $venta
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Venta $venta)
+    {
+        $total = 0;
+        foreach ($venta->productos as $producto) {
+            $total += $producto->cantidad * $producto->precio;
+        }
+        return view("ventas.show", [
+            "venta" => $venta,
+            "total" => $total,
         ]);
     }
-    public function update(Ventas $ventas)
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param \App\Venta $venta
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Venta $venta)
     {
-
-        $ventas->update([
-            'nombre'=> request('nombre'),
-            'aPaterno'=> request('aPaterno'),
-            'aMaterno'=> request('aMaterno'),
-            'ci'=> request('ci'),
-            'celular'=> request('celular'),
-            'usuario'=> request('usuario'),
-            'password'=> request('password'),
-            'rol'=> 'null',
-            'estado'=> '1'
-        ]);
-
-        return redirect()->route('ventas.index', $ventas)->with('status','Se Actualizo Exitosamente');
+        //
     }
-    
-    public function destroy(Ventas $ventas)
-    {
-        $ventas->delete();
-        return redirect()->route('ventas.index')->with('status','Se Elimino Exitosamente');
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Venta $venta
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Venta $venta)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param \App\Venta $venta
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Venta $venta)
+    {
+        $venta->delete();
+        return redirect()->route("ventas.index")
+            ->with("status", "Venta eliminada");
     }
 }

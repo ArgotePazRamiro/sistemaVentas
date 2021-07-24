@@ -1,90 +1,54 @@
 @extends('layouts.layout')
 
 @section('content')
-
     <section id="formulario" class="formulario">
-        <div class="container">
-            <div class="section-title">
-                <h2>VENTAS</h2>
-                <h4>Productos</h4>
-            </div>
-            <div class="col-lg-12 d-flex align-items-stretch">
-
-                <table class="table table-dark">
-                    <thead>
-                        <tr>
-                            <th class="th">Nombre</th>
-                            <th class="th">Marca</th>
-                            <th class="th">Numero de Serie</th>
-                            <th class="th">Precio Unitario</th>
-                            <th class="th">Stock</th>
-                            <th class="th">Precio Comision</th>
-                            <th class="th">Categoria</th>
-                        </tr>
-                    </thead>
-                    
-                    @forelse ($data as $pro)
-                    
-                        <tbody>
-                            <tr class="table-active">
-                                <th>
-                                    <a href="{{ route('ventas.show', $pro) }}">
-
-                                        <span class="font-weight-bold">
-                                            {{ $pro->nombreCliente }}
-                                        </span>
-                                    </a>
-                                </th>
-                                <th>
-                                    <span class="font-weight-bold">
-                                        {{ $pro->CI }}
-                                    </span>
-                                </th>
-                                <th>
-                                    <span class="font-weight-bold">
-                                        {{ $pro->marca }}
-                                    </span>
-                                </th>
-                                <th>
-                                    <span class="font-weight-bold">
-                                        {{ $pro->nSerie }}
-                                    </span>
-                                </th>
-                                <th>
-                                    <span class="font-weight-bold">
-                                        {{ $pro->precioComision }}
-                                    </span>
-                                </th>
-                                <th>
-                                    <span class="font-weight-bold">
-                                        {{ $pro->categoria }}
-                                    </span>
-                                </th>
-                                <th>
-                                    <span class="font-weight-bold">
-                                        {{ $pro->stock }}
-                                    </span>
-                                </th>
-                            </tr>
-                        </tbody>
-                    @empty
-                        <tbody>
+        <div class="row">
+            <div class="col-12">
+                <h1>Ventas <i class="fa fa-list"></i></h1>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
                             <tr>
-                                <th>
-                                    <li class="list-group-item border-0 mb-3 shadow-sm">
-                                        no hay archivos
-                                    </li>
-                                </th>
+                                <th>Fecha</th>
+                                <th>Cliente</th>
+                                <th>Total</th>
+                                <th>Ticket de venta</th>
+                                <th>Detalles</th>
+                                <th>Eliminar</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($ventas as $venta)
+                                <tr>
+                                    <td>{{ $venta->created_at }}</td>
+                                    <td>{{ $venta->cliente->nombre }}</td>
+                                    <td>${{ number_format($venta->total, 2) }}</td>
+                                    <td>
+                                        <a class="btn btn-info" href="{{ route('ventas.ticket', ['id' => $venta->id]) }}">
+                                            <i class="fa fa-print"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success" href="{{ route('ventas.show', $venta) }}">
+                                            <i class="fa fa-info"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('ventas.destroy', [$venta]) }}" method="post">
+                                            @method("delete")
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
-                    @endforelse
-                    {{-- {{ $data->links() }} --}}
-
-                </table>
+                    </table>
+                </div>
             </div>
-
         </div>
-
-    </section><!-- End Section -->
-
+    </section>
 @endsection

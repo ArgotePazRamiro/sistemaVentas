@@ -41,9 +41,15 @@ Route::post('/personal','personalController@store')->name('personal.store');
 Route::get('/personal/{personal}','personalController@show')->name('personal.show');
 Route::delete('/personal/{personal}','personalController@destroy')->name('personal.destroy'); */
 Route::resource('personal','personalController')->names('personal');
-Route::resource('cliente','clientesController')->names('cliente');
-Route::resource('producto','productosController')->names('producto');
-Route::resource('ventas','ventasController')->names('ventas');
+Route::resource("clientes","ClientesController");
+Route::resource("productos","ProductosController");
+Route::get("/ventas/ticket", "VentasController@ticket")->name("ventas.ticket");
+Route::resource('ventas','VentasController');
+
+Route::get("/vender", "VenderController@index")->name("vender.index");
+Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
+Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");
+Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta")->name("terminarOCancelarVenta");
 
 
 

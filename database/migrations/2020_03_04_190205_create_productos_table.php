@@ -14,17 +14,17 @@ class CreateProductosTable extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre');
-            $table->string('marca');
-            $table->string('nSerie');
-            $table->string('precioUnitario');
-            $table->double('stock', 10, 2);
-            $table->double('precioComision', 10, 2);
-            $table->string('categoria');
+            $table->id();
+            $table->string("nombre");
+            $table->string("categoria");
+            
+            $table->string("marca");
+            $table->string("codigo");
+            $table->decimal("precio_compra", 9, 2);
+            $table->decimal("precio_comision", 9, 2);
+            $table->decimal("precio_venta", 9, 2);
+            $table->integer("stock");
             $table->timestamps();
-            $table->boolean('estado');
-
         });
     }
 
