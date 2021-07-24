@@ -21,10 +21,18 @@ class CreateProductoVendidosTable extends Migration
                 ->on("ventas")
                 ->onDelete("cascade")
                 ->onUpdate("cascade");
+            $table->unsignedBigInteger("id_tipoPago");
+            $table->foreign("id_tipoPago")
+                ->references("id")
+                ->on("tipo_pago")
+                ->onDelete("cascade")
+                ->onUpdate("cascade");
             $table->string("nombre");
             $table->string("categoria");
             $table->string("precio_comision");
             $table->string("marca");
+            
+
             $table->integer("total");
             $table->decimal("precio", 9, 2);
             $table->decimal("cantidad", 9, 2);

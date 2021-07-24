@@ -6,6 +6,8 @@ use App\Cliente;
 use App\Producto;
 use App\ProductoVendido;
 use App\Venta;
+use App\tipoPago;
+
 use Illuminate\Http\Request;
 
 class VenderController extends Controller
@@ -27,20 +29,31 @@ class VenderController extends Controller
         $venta->id_cliente = $request->input("id_cliente");
         $venta->saveOrFail();
         $idVenta = $venta->id;
+
+        $venta1 = new Venta();
+        $venta1->id_tipoPago = $request->input("id_tipoPago");
+        $venta1->saveOrFail();
+        $idVenta1 = $venta1->id;
+
         $productos = $this->obtenerProductos();
+
         // Recorrer carrito de compras
-        foreach ($productos as $producto) {
+        /* foreach ($productos as $producto) {
             // El producto que se vende...
             $productoVendido = new ProductoVendido();
+            
             $productoVendido->fill([
                 "id_venta" => $idVenta,
+                "id_tipoPago"=>$idVenta1,
                 "nombre" =>$producto->nombre,
                 "categoria"=>$producto->categoria,
                 "precio_comision"=>$producto->precio_comision,
                 "marca"=>$producto->marca,
                 "cantidad" =>$producto->cantidad,
                 "total" =>$producto->precio_compra,
-                "precio" =>$producto->precio_venta,
+                "precio" =>$producto->precio_venta,  
+                
+
             ]);
             // Lo guardamos
             $productoVendido->saveOrFail();
@@ -48,11 +61,12 @@ class VenderController extends Controller
             $productoActualizado = Producto::find($producto->id);
             $productoActualizado->stock -= $productoVendido->cantidad;
             $productoActualizado->saveOrFail();
-        }
-        $this->vaciarProductos();
-        return redirect()
+        } */ 
+        // $this->vaciarProductos();
+        return dd($venta1);
+        /* return redirect()
             ->route("vender.index")
-            ->with("status", "Venta terminada");
+            ->with("status", "Venta terminada"); */
     }
 
     private function obtenerProductos()
@@ -160,6 +174,7 @@ class VenderController extends Controller
             [
                 "total" => $total,
                 "clientes" => Cliente::all(),
+                "tipos" => tipoPago::all(), 
             ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Venta;
+use App\tipoPago;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
@@ -100,6 +101,7 @@ class VentasController extends Controller
         return view("ventas.show", [
             "venta" => $venta,
             "total" => $total,
+            "tipo" => tipoPago::all(),
         ]);
     }
 

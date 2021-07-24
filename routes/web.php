@@ -50,6 +50,8 @@ Route::get("/vender", "VenderController@index")->name("vender.index");
 Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
 Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");
 Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta")->name("terminarOCancelarVenta");
+Route::post("/terminarVenta", "VenderController@terminarVenta")->name("terminarVenta");
+
 
 
 

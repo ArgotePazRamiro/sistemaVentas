@@ -17,4 +17,9 @@ class Venta extends Model
     {
         return $this->belongsTo("App\Cliente", "id_cliente");
     }
+    public function tipoPago()
+    {
+        return $this->belongsTo("App\tipoPago", "id_tipoPago");
+    }
+    
 }

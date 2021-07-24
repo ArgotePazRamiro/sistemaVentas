@@ -13,7 +13,8 @@
                                 <th>Fecha</th>
                                 <th>Cliente</th>
                                 <th>Total</th>
-                                <th>Ticket de venta</th>
+                                
+                                {{-- <th>Ticket de venta</th> --}}
                                 <th>Detalles</th>
                                 <th>Eliminar</th>
                             </tr>
@@ -24,11 +25,12 @@
                                     <td>{{ $venta->created_at }}</td>
                                     <td>{{ $venta->cliente->nombre }}</td>
                                     <td>${{ number_format($venta->total, 2) }}</td>
-                                    <td>
+                                    {{-- <td>
                                         <a class="btn btn-info" href="{{ route('ventas.ticket', ['id' => $venta->id]) }}">
                                             <i class="fa fa-print"></i>
                                         </a>
-                                    </td>
+                                    </td> --}}
+                                    
                                     <td>
                                         <a class="btn btn-success" href="{{ route('ventas.show', $venta) }}">
                                             <i class="fa fa-info"></i>
