@@ -38,7 +38,7 @@
                                 <td>{{$producto->stock}}</td>
                                 <td>
                                     <a class="btn btn-warning" href="{{route("productos.edit",[$producto])}}">
-                                        <i class="fa fa-edit"></i>
+                                        <i class="bi bi-pencil-square"></i>
                                     </a>
                                 </td>
                                 <td>
@@ -46,7 +46,7 @@
                                         @method("delete")
                                         @csrf
                                         <button type="submit" class="btn btn-danger">
-                                            <i class="fa fa-trash"></i>
+                                            <i class="bi bi-trash"></i>
                                         </button>
                                     </form>
                                 </td>

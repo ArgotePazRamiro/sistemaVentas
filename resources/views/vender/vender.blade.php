@@ -6,17 +6,28 @@
         <div class="col-12">
             
             <div class="section-title"> 
-                <h2 class="display">Nueva venta <i class="fa fa-cart-plus"></i></h2>
+                <h2 class="display">NUEVA VENTA <i class="bi bi-cart-plus"></i></h2>
             </div>
             <div class="row">
                 <div class="col-11 col-md-6">
                     <form action="{{route("terminarOCancelarVenta")}}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="id_cliente">Cliente</label>
+                            <label for="id_cliente">CLIENTE</label>
                             <select required class="form-select form-select-lg mb-0" aria-label=".form-select-lg example" name="id_cliente" id="id_cliente">
                                 @foreach($clientes as $cliente)
+                                <option selected>SELECCIONE CLIENTE......</option>
                                     <option value="{{$cliente->id}}">{{$cliente->nombre}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label for="id_tipoPago">TIPO DE PAGO</label>
+                            <select required class="form-group form-select-sm" aria-label=".form-select-lg example" name="id_tipoPago" id="id_tipoPago">
+                                @foreach($tipoPagos as $tipoPago)
+                                    <option selected>SELECCIONE TIPO DE PAGO......</option>
+                                    <option value="{{$tipoPago->id}}">{{$tipoPago->tipoPago}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -35,25 +46,12 @@
                         @endif
                     </form>
                 </div>
-                <div class="col-11 col-md-6">
-                    <form action="{{route("terminarOCancelarVenta")}}" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <label for="id_tipoPago">TIPO DE PAGO</label>
-                            <select required class="form-select form-select-lg mb-0" aria-label=".form-select-lg example" name="id_tipoPago" id="id_tipoPago">
-                                @foreach($tipos as $tipo)
-                                    <option value="{{$tipo->id}}">{{$tipo->tipoPago}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </form>
-                </div>
+                
 
                 
                 <div class="col-12 col-md-6">
                     <form action="{{route("agregarProductoVenta")}}" method="POST">
                         @csrf
-                        
                         <div class="form-group">
                             <label for="nombre">PRODUCTO</label>
                             <input id="nombre" autocomplete="off" required autofocus name="nombre" type="text"

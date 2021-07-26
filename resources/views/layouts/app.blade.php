@@ -18,7 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+{{--     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+ --}}</head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg shadow-sm">

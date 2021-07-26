@@ -1,17 +1,13 @@
 <?php
 
-
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use app\ProductoVendido;
 
-class tipoPago extends Model
+class TipoPago extends Model
 {
+    protected $fillable = ["tipoPago"];
+    protected $table ="tipopago";
 
-    protected $table = "tipo_pago";
-    protected $fillable = ["id","tipoPago"];
-    
     
 }

@@ -15,27 +15,43 @@
 
     <nav id="navbar" class="nav-menu navbar">
         <ul>
-            <li class="{{setActive('personal.index')}}"><a href="{{route('personal.index')}}" class="nav-link scrollto "><i class="bx bi-file-person"></i>
+            <li class="{{ setActive('personal.index') }}"><a href="{{ route('personal.index') }}"
+                    class="nav-link scrollto "><i class="bx bi-file-person"></i>
                     <span>Personal</span></a></li>
-            <li class="{{setActive('productos.index')}}"><a href="{{route('productos.index')}}" class="nav-link scrollto"><i class="bx bi-box-seam"></i>
-                <span>Almacen</span></a>
+            <li class="{{ setActive('productos.index') }}"><a href="{{ route('productos.index') }}"
+                    class="nav-link scrollto"><i class="bx bi-box-seam"></i>
+                    <span>Almacen</span></a>
             </li>
-            <li class="{{setActive('clientes.index')}}"><a href="{{route('clientes.index')}}" class="nav-link scrollto"><i class="bx bx-user"></i>
+            <li class="{{ setActive('clientes.index') }}"><a href="{{ route('clientes.index') }}"
+                    class="nav-link scrollto"><i class="bx bx-user"></i>
                     <span>Clientes</span></a></li>
-            <li class="{{setActive('ventas.index')}}"><a href="{{route('ventas.index')}}" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+
+            <li class="{{ setActive('tipoPago.index') }}"><a href="{{ route('tipoPago.index') }}"
+                    class="nav-link scrollto"><i class="bi bi-cash"></i>
+                    <span>Tipo De Pago</span></a></li>
+
+            <li class="{{ setActive('vender.index') }}"><a href="{{ route('vender.index') }}"
+                    class="nav-link scrollto"><i class="bi bi-cart-plus"></i>
+                    <span>Vender</span></a></li>
+            <li class="{{ setActive('ventas.index') }}"><a href="{{ route('ventas.index') }}"
+                    class="nav-link scrollto"><i class="bx bx-book-content"></i>
                     <span>Ventas</span></a></li>
             <li {{-- class="{{setActive('personal.index')}}" --}}><a href="#" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
                     <span>Registros</span></a></li>
             {{-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
                     <span>Contact</span></a></li> --}}
-            <li class="{{setActive('users.index')}}"><a href="{{route('users.index')}}" class="nav-link scrollto"><i class='bx bxs-user-detail' ></i>
-                <span>Asignar rol</span></a>
+            <li class="{{ setActive('users.index') }}"><a href="{{ route('users.index') }}"
+                    class="nav-link scrollto"><i class='bx bxs-user-detail'></i>
+                    <span>Asignar rol</span></a>
             </li>
-            <li class="{{setActive('roles.index/*')}}"><a href="{{route('roles.index')}}" class="nav-link scrollto"><i class='bx bxs-key' ></i>
-                <span>Roles</span></a>
+            <li class="{{ setActive('roles.index/*') }}"><a href="{{ route('roles.index') }}"
+                    class="nav-link scrollto"><i class='bx bxs-key'></i>
+                    <span>Roles</span></a>
             </li>
             <li>
-                <a href="" class="nav-link scrollto" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class='bx bx-log-out-circle' ></i>Cerrar Session</a>
+                <a href="" class="nav-link scrollto"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                        class='bx bx-log-out-circle'></i>Cerrar Session</a>
             </li>
         </ul>
     </nav><!-- .nav-menu -->
