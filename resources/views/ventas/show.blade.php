@@ -15,7 +15,7 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Descripción</th>
+                <th>nombre</th>
                 <th>Categoria</th>
                 <th>marca</th>
                 <th>Tipo de Pagos</th>
@@ -32,7 +32,10 @@
                     <td>{{$producto->nombre}}</td>
                     <td>{{$producto->categoria}}</td>
                     <td>{{$producto->marca}}</td>
-                    <td>{{$tipo->tipoPago}} </td>
+                
+                    <td>{{$venta->id_tipoPago}} </td>
+                        
+                    
 
                     <td>Bs. {{number_format($producto->precio, 2)}}</td>
                     <td>{{$producto->cantidad}}</td>
@@ -42,7 +45,7 @@
             </tbody>
             <tfoot>
             <tr>
-                <td colspan="3"></td>
+                <td colspan="5"></td>
                 <td><strong>Total</strong></td>
                 <td>Bs. {{number_format($total, 2)}}</td>
             </tr>

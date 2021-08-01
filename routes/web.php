@@ -44,6 +44,8 @@ Route::resource('personal','personalController')->names('personal');
 Route::resource("clientes","ClientesController");
 Route::resource("productos","ProductosController");
 Route::resource("tipoPago", "TipoPagoController");
+/* Route::resource("formaPago", "formaPagoController"); */
+Route::get("/formaPago", "formaPagoController@index")->name("formaPago.formaPago_index");
 
 Route::get("/ventas/ticket", "VentasController@ticket")->name("ventas.ticket");
 Route::resource('ventas','VentasController');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Venta;
-use App\tipoPago;
+use App\TipoPago;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
@@ -15,7 +15,6 @@ class VentasController extends Controller
     public function ticket(Request $request)
     {
         return redirect()->back()->with("status", "Ticket impreso");
-
         /* $venta = Venta::findOrFail($request->get("id"));
         $nombreImpresora = env("NOMBRE_IMPRESORA");
         $connector = new WindowsPrintConnector($nombreImpresora);
@@ -59,6 +58,7 @@ class VentasController extends Controller
     public function index()
     {
         $ventasConTotales = Venta::join("productos_vendidos", "productos_vendidos.id_venta", "=", "ventas.id")
+                                    
             ->select("ventas.*", DB::raw("sum(productos_vendidos.cantidad * productos_vendidos.precio) as total"))
             ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at", "ventas.id_cliente")
             ->get();
@@ -92,7 +92,7 @@ class VentasController extends Controller
      * @param \App\Venta $venta
      * @return \Illuminate\Http\Response
      */
-    public function show(Venta $venta)
+    public function show(Venta $venta,TipoPago $tipo)
     {
         $total = 0;
         foreach ($venta->productos as $producto) {
@@ -101,7 +101,7 @@ class VentasController extends Controller
         return view("ventas.show", [
             "venta" => $venta,
             "total" => $total,
-            "tipo" => tipoPago::all(),
+            "tipo" =>$tipo
         ]);
     }
 
