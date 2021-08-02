@@ -15,9 +15,9 @@
                             <label for="id_tipoPago">TIPO DE PAGO</label>
                             <select required class="form-group form-select-sm" aria-label=".form-select-lg example" name="id_tipoPago" id="id_tipoPago">
                                 {{-- @foreach($tipoPagos as $tipoPago) --}}
-                                    <option selected>SELECCIONE TIPO DE PAGO......</option>
-                                    <option >ASD</option>
-                                    <option >asd</option>
+                                    <option >TARJETA</option>
+                                    <option >EFECTIVO</option>
+                                    <option >transaccion</option>
                                     <option {{-- value="{{$tipoPago->id}} --}}">{{-- {{$tipoPago->tipoPago}} --}}</option>
                                 {{-- @endforeach --}}
                             </select>
@@ -28,7 +28,7 @@
                     <div class="col-6 col-md-6">
                         <div class="form-group">
                             <label for="title">
-                                Titulo del proyecto 
+                                MONTO
                                 <input class="form-control border-0 bg-light shadow-sm"
                                     type="text"
                                     id="title"

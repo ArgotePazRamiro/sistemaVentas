@@ -15,8 +15,9 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
-                                <th>Carnet de identidad</th>
+                                <th>CI-NIT</th>
                                 <th>Teléfono</th>
+                                <th>Direccion</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                             </tr>
@@ -28,6 +29,8 @@
                                     <td>{{ $cliente->apellidos }}</td>
                                     <td>{{ $cliente->ci }}</td>
                                     <td>{{ $cliente->telefono }}</td>
+                                    <td>{{ $cliente->direccion }}</td>
+
                                     <td>
                                         <a class="btn btn-warning" href="{{ route('clientes.edit', [$cliente]) }}">
                                             <i class="bi bi-pencil-square"></i>

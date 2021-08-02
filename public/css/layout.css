@@ -38,7 +38,7 @@ h6 {
     z-index: 9997;
     transition: all 0.5s;
     padding: 0 15px;
-    background: #373738;
+    background: #141414;
     overflow-y: auto;
 }
 
@@ -114,7 +114,7 @@ h6 {
 .nav-menu a {
     display: flex;
     align-items: center;
-    color: #a8a9b4;
+    color: #9f9fa3;
     padding: 12px 15px;
     margin-bottom: 8px;
     transition: 0.3s;
@@ -124,19 +124,15 @@ h6 {
 .nav-menu a i {
     font-size: 30px;
     padding-right: 8px;
-    color: #6f7180;
+    color: #b8b8b9;
 }
 
-.nav-menu a:hover,
-.nav-menu .active,
-.nav-menu li:hover > a {
+.nav-menu a:hover, .nav-menu .active, .nav-menu li:hover > a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.89);
 }
 
-.nav-menu a:hover i,
-.nav-menu .active i,
-.nav-menu li:hover > a i {
+.nav-menu a:hover i,.nav-menu .active i,.nav-menu li:hover > a i {
     color: #e5ff00;
 }
 

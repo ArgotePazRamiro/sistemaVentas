@@ -6,29 +6,45 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CreateProjectRequest extends FormRequest
 {
-    
-   /*  public function authorize()
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
     {
-        return false;
+        return true;
     }
- */
+ 
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
    
     public function rules()
     {
         return [
             'nombre'=>'required',
-            'precioUnitario'=>'numeric|required',
-            'marca'=>'numeric|required',
-            'nSerie'=>'numeric|required',
-            'stock'=>'numeric|required',
             'categoria'=>'required',
-            'precioComision'=>'numeric|required',
-            'estado'=>'required|boolean'
+            'marca'=>'required',
+            'precio_compra'=>'numeric|required',
+            'stock'=>'numeric|required',
+            'precio_venta'=>'numeric|required',
+            'precio_comision'=>'numeric|required',
         ];
         
     }
     public function messages(){
         return [
+            'nombre.required'=>'Es necesario un nombre',
+            'categoria.required'=>' obligatorio',
+            'marca.required'=>'Es necesario la marca',
+            'precio_compra.numeric'=>'El precio compra es numerico',
+            'precio_compra.required'=>'El Precio de compra es tipo entero, y obligatorio',
+            'stock.numeric'=>'El stock debe ser de tipo numerico, y obligatorio',
+            'precio_venta.numeric'=>'El precio de Venta debe ser de tipo numerico, y obligatorio',
+            'precio_comision.numeric'=>'El Precio de Comision debe ser de tipo numerico, y obligatorio',
             
         ];
     }

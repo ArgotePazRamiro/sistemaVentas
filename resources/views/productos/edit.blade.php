@@ -28,12 +28,6 @@
                            type="text" placeholder="marca">
                 </div>
                 <div class="form-group">
-                    <label class="label">codigo</label>
-                    <input required value="{{$producto->codigo}}" autocomplete="off" name="codigo"
-                           class="form-control"
-                           type="text" placeholder="codigo">
-                </div>
-                <div class="form-group">
                     <label class="label">Precio de compra</label>
                     <input required value="{{$producto->precio_compra}}" autocomplete="off" name="precio_compra"
                            class="form-control"

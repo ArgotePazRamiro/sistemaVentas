@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Producto;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProjectRequest;
 
 class ProductosController extends Controller
 {
@@ -27,62 +28,29 @@ class ProductosController extends Controller
         return view("productos.create");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(CreateProjectRequest $request)
     {
-        $producto = new Producto($request->input());
-        $producto->saveOrFail();
+        Producto::create($request->validated());
         return redirect()->route("productos.index")->with("status", "Producto guardado");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Producto $producto
-     * @return \Illuminate\Http\Response
-     */
     public function show(Producto $producto)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Producto $producto
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Producto $producto)
     {
-        return view("productos.edit", ["producto" => $producto,
-        ]);
+        return view("productos.edit", ["producto" => $producto]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Producto $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Producto $producto)
+    public function update(CreateProjectRequest $request, Producto $producto)
     {
-        $producto->fill($request->input());
+        $producto->fill($request->validated());
         $producto->saveOrFail();
         return redirect()->route("productos.index")->with("status", "Producto actualizado");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Producto $producto
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Producto $producto)
     {
         $producto->delete();

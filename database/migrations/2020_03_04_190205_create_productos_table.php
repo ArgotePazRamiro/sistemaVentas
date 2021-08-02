@@ -19,7 +19,6 @@ class CreateProductosTable extends Migration
             $table->string("categoria");
             
             $table->string("marca");
-            $table->string("codigo");
             $table->decimal("precio_compra", 9, 2);
             $table->decimal("precio_comision", 9, 2);
             $table->decimal("precio_venta", 9, 2);

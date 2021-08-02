@@ -3,22 +3,23 @@
 @section('content')
 
     <section id="contact" class="contact">
-        <div class="row">
+        <div class="container">
             <div class="col-12">
                 <h1>Productos <i class="fa fa-box"></i></h1>
                 <a href="{{route("productos.create")}}" class="btn btn-success mb-2">Agregar</a>
                 
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-striped table-dark">
                         <thead>
                         <tr>
                             <th>Nombre</th>
                             <th>Categoria</th>
                             <th>Marca</th>
-                            <th>Codigo</th>
                             <th>Precio de compra</th>
                             <th>Precio de venta</th>
+                            {{-- <th>Ganancia</th> --}}
                             <th>Precio Comision</th>
+
                             <th>Stock</th>
     
                             <th>Editar</th>
@@ -31,10 +32,11 @@
                                 <td>{{$producto->nombre}}</td>
                                 <td>{{$producto->categoria}}</td>
                                 <td>{{$producto->marca}}</td>
-                                <td>{{$producto->codigo}}</td>
                                 <td>{{$producto->precio_compra}}</td>
                                 <td>{{$producto->precio_venta}}</td>
-                                <td>{{$producto->precio_venta - $producto->precio_compra}}</td>
+                                {{-- <td>{{$producto->precio_venta - $producto->precio_compra}}</td> --}}
+                                <td>{{$producto->precio_comision}}</td>
+
                                 <td>{{$producto->stock}}</td>
                                 <td>
                                     <a class="btn btn-warning" href="{{route("productos.edit",[$producto])}}">

@@ -23,6 +23,12 @@
                     class="form-control border-1 bg-secondary shadow-sm" type="text"
                         placeholder="Apellidos">
                 </div>
+                <div class="form-group">
+                    <h4>Direccion</h4>
+                    <input required autocomplete="off" name="direccion" 
+                    class="form-control border-1 bg-secondary shadow-sm" type="text"
+                        placeholder="Direccion">
+                </div>
                 <div class="row">
                 <div class="form-group col-md-6">
                     <h4>Carnet de Identidad</h4>

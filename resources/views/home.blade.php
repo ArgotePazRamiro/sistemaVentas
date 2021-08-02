@@ -8,8 +8,11 @@
 
  
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="{{asset('img/logo.JPG')}}" rel="icon">
 
   <!-- Vendor CSS Files -->
+  <link href="{{url("/css/bootstrap.min.css")}}" rel="stylesheet">
+  <link href="{{url("/css/all.min.css")}}" rel="stylesheet">
   <link href="{{asset('vendor/aos/aos.css')}}" rel="stylesheet">
   <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">

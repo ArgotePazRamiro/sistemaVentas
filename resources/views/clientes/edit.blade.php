@@ -25,6 +25,11 @@
                            type="text" placeholder="Nombre">
                 </div>
                 <div class="form-group">
+                    <label class="label">Direccion</label>
+                    <input required value="{{$cliente->direccion}}" autocomplete="off" name="direccion" class="form-control"
+                           type="text" placeholder="Direccion">
+                </div>
+                <div class="form-group">
                     <label class="label">Teléfono</label>
                     <input required value="{{$cliente->telefono}}" autocomplete="off" name="telefono"
                            class="form-control"

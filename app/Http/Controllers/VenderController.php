@@ -27,12 +27,9 @@ class VenderController extends Controller
         // Crear una venta
         $venta = new Venta();
         $venta->id_cliente = $request->input("id_cliente");
-        $venta->id_tipoPago = $request->input("id_tipoPago");
+        $venta->codigo = $request->input("codigo");
         $venta->saveOrFail();
         $idVenta = $venta->id;
-
-        
-
         $productos = $this->obtenerProductos();
 
         // Recorrer carrito de compras
@@ -49,8 +46,6 @@ class VenderController extends Controller
                 "cantidad" =>$producto->cantidad,
                 "total" =>$producto->precio_compra,
                 "precio" =>$producto->precio_venta,  
-                
-
             ]);
             // Lo guardamos
             $productoVendido->saveOrFail();
@@ -59,9 +54,9 @@ class VenderController extends Controller
             $productoActualizado->stock -= $productoVendido->cantidad;
             $productoActualizado->saveOrFail();
         } 
-        // $this->vaciarProductos();
+        $this->vaciarProductos();
         return redirect()
-            ->route("vender.index")
+            ->route("ventas.index")
             ->with("status", "Venta terminada"); 
     }
 
@@ -105,8 +100,8 @@ class VenderController extends Controller
 
     public function agregarProductoVenta(Request $request)
     {
-        $codigo = $request->post("nombre");
-        $producto = Producto::where("nombre", "=", $codigo)->first();
+        $nombre = $request->post("nombre");
+        $producto = Producto::where("nombre", "=", $nombre)->first();
         if (!$producto) {
             return redirect()
                 ->route("vender.index")
@@ -145,10 +140,10 @@ class VenderController extends Controller
         $this->guardarProductos($productos);
     }
 
-    private function buscarIndiceDeProducto(string $codigo, array &$productos)
+    private function buscarIndiceDeProducto(string $nombre, array &$productos)
     {
         foreach ($productos as $indice => $producto) {
-            if ($producto->nombre === $codigo) {
+            if ($producto->nombre === $nombre) {
                 return $indice;
             }
         }

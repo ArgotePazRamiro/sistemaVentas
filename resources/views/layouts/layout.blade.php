@@ -8,7 +8,8 @@
     <title>@yield("titulo","BACK CELL") </title>
     <!-- Favicons -->
   <link href="{{asset('img/logo.JPG')}}" rel="icon">
-  
+  {{-- <link href="{{url("/css/bootstrap.min.css")}}" rel="stylesheet">
+  <link href="{{url("/css/all.min.css")}}" rel="stylesheet"> --}}
     <link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
