@@ -163,16 +163,40 @@ class CreditosController extends Controller
             ]);
     }
     public function show(Creditos $creditos){
-
-        /* $total = 0;
-        foreach ($creditos->productos as $producto) {
-            $total += $producto->cantidad * $producto->precio;
-        } */
         $ventasConTotales = Creditos::join("productos_creditos", "productos_creditos.id_creditos", "=", "creditos.id") 
-            ->select("creditos.*",DB::raw("sum(productos_creditos.cantidad * productos_creditos.precio) as total"))
+            ->select("creditos.*",DB::raw("sum(productos_creditos.cantidad * productos_creditos.precio) as total")/* ,DB::raw("sum(productos_creditos.total -creditos.aCuenta - creditos.couta1 - creditos.couta2 - creditos.couta3 - creditos.couta4 - creditos.couta5- creditos.couta6) as debe ")  */)
             ->groupBy("creditos.id", "creditos.created_at", "creditos.id_cliente","creditos.codigo","creditos.saldo","creditos.aCuenta","creditos.fechaLimite")
             ->get();
-        return view("creditos.show", ["creditos" => $ventasConTotales/* ,"total" => $total */]);
+        return view("creditos.show", ["creditos" => $ventasConTotales]);
+    }
+
+    public function edit(Creditos $creditos)
+    {
+        return view("creditos.edit", ["creditos" => $creditos]);
+    }
+
+    public function update(Request $request, Creditos $creditos)
+    {
+        $creditos->fill($request->input());
+        $creditos->saveOrFail();
+        return redirect()->route("creditos.index")->with("status", "El Credito a sido actualizado");
+    }
+
+    public function create()
+    {
+       
+    }
+
+    public function store(Request $request)
+    {
         
     }
+    public function destroy()
+    {
+        
+    }
+
+
+
+
 }

@@ -12,13 +12,13 @@
             <i class="fa fa-print"></i>&nbsp;Ticket
         </a> --}}
         <h2>Productos</h2>
-        <table class="table table-bordered">
+        <table class="table table-bordered border-primary">
             <thead>
             <tr>
                 <th>nombre</th>
                 <th>Categoria</th>
                 <th>marca</th>
-                <th>Tipo de Pagos</th>
+                
 
                 <th>Precio</th>
 
@@ -33,7 +33,7 @@
                     <td>{{$producto->categoria}}</td>
                     <td>{{$producto->marca}}</td>
                 
-                    <td>{{$venta->id_tipoPago}} </td>
+                    
                         
                     
 
@@ -41,15 +41,34 @@
                     <td>{{$producto->cantidad}}</td>
                     <td>Bs. {{number_format($producto->cantidad * $producto->precio, 2)}}</td>
                 </tr>
-            @endforeach
+
+        
             </tbody>
             <tfoot>
-            <tr>
-                <td colspan="5"></td>
-                <td><strong>Total</strong></td>
-                <td>Bs. {{number_format($total, 2)}}</td>
-            </tr>
-            </tfoot>
+                <tr>
+                    <td colspan="4" class="table-active"></td>
+                    <td><strong>Total</strong></td>
+                    <td>Bs. {{number_format($total, 2)}}</td>
+                </tr>
+                </tfoot>
+            <tfoot>
+                <tr>
+                    <td colspan="2" class="table-active"></td>
+                <td><strong>TRANSFERENCIA</strong></td>
+                <td><strong>EFECTIVO</strong></td>
+                <td><strong>TARJETA</strong></td>
+                <td><strong>DEPOSITO</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="table-active"></td>
+                <td>{{$venta->transferencia}}</td>
+                <td>{{$venta->efectivo}}</td>
+                <td>{{$venta->tarjeta}}</td>
+                <td>{{$venta->deposito}}</td>
+                </tr>
+                </tfoot>
+            @endforeach
+            
         </table>
 
     </div>

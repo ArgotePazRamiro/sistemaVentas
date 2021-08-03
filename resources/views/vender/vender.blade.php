@@ -39,6 +39,37 @@
                                 <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
                                     name="codigo" id="codigo" placeholder="">
                             </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <br>
+                                    <h5>EFECTIVO</h5>
+                                    <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
+                                        name="efectivo" id="efectivo" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <br>
+                                    <h5>TRANSFERENCIA</h5>
+                                    <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
+                                        name="transferencia" id="transferencia" placeholder="">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <br>
+                                    <h5>TARJETA</h5>
+                                    <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
+                                        name="tarjeta" id="tarjeta" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <br>
+                                    <h5>DEPOSITO</h5>
+                                    <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
+                                        name="deposito" id="deposito" placeholder="">
+                                </div>
+                                
+                            </div>
                             @if (session('productos') !== null)
                                 <div class="form-group">
                                     <br>

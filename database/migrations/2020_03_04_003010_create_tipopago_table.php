@@ -16,7 +16,14 @@ class CreatetipopagoTable extends Migration
     {
         Schema::create('tipopago', function (Blueprint $table) {
             $table->id();
-            $table->string("tipoPago");
+            $table->boolean("efectivo")->nullable();
+            $table->string("efectivo1")->nullable();
+            $table->boolean("tarjeta")->nullable();
+            $table->string("tarjeta1")->nullable();
+            $table->boolean("transferencia")->nullable();
+            $table->string("transferencia1")->nullable();
+            $table->boolean("deposito")->nullable();
+            $table->string("deposito1")->nullable();
             
             $table->timestamps();
         });

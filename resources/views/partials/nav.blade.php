@@ -20,21 +20,21 @@
                     <span>Personal</span></a></li>
             <li class="{{ setActive('productos.index') }}"><a href="{{ route('productos.index') }}"
                     class="nav-link scrollto"><i class="bx bi-box-seam"></i>
-                    <span>Almacen</span></a>
+                    <span>Almacen de Productos</span></a>
             </li>
             <li class="{{ setActive('clientes.index') }}"><a href="{{ route('clientes.index') }}"
                     class="nav-link scrollto"><i class="bx bx-user"></i>
                     <span>Clientes</span></a></li>
 
-            <li class="{{ setActive('tipoPago.index') }}"><a href="{{ route('tipoPago.index') }}"
+    {{--         <li class="{{ setActive('tipoPago.index') }}"><a href="{{ route('tipoPago.index') }}"
                     class="nav-link scrollto"><i class="bi bi-cash"></i>
-                    <span>Tipo De Pago</span></a></li>
+                    <span>Tipo De Pago</span></a></li> --}}
 
             <li class="{{ setActive('vender.index') }}"><a href="{{ route('vender.index') }}"
                     class="nav-link scrollto"><i class="bi bi-cart-plus"></i>
                     <span>Vender</span></a></li>
             <li class="{{ setActive('creditos.index') }}"><a href="{{ route('creditos.index') }}"
-                    class="nav-link scrollto"><i class="bx bx-book-content"></i>
+                    class="nav-link scrollto"><i class="bi bi-cash-stack"></i>
                     <span>Creditos</span></a></li>
             <li class="{{ setActive('ventas.index') }}"><a href="{{ route('ventas.index') }}"
                     class="nav-link scrollto"><i class="bx bx-book-content"></i>

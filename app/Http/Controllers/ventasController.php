@@ -101,7 +101,6 @@ class VentasController extends Controller
         return view("ventas.show", [
             "venta" => $venta,
             "total" => $total,
-            "tipo" =>$tipo
         ]);
     }
 

@@ -16,6 +16,11 @@ class CreateVentasTable extends Migration
         Schema::create('ventas', function (Blueprint $table) {
             $table->id();
             $table->string('codigo')->nullable();
+            $table->string('efectivo')->nullable();
+            $table->string('transferencia')->nullable();
+            $table->string('tarjeta')->nullable();
+            $table->string('deposito')->nullable();
+
             $table->timestamps();
         });
     }

@@ -12,7 +12,6 @@
                             <tr>
                                 <th>Fecha</th>
                                 <th>Cliente</th>
-                                <th>Forma de Pago</th>
                                 <th>Total</th>
                                 
                                 {{-- <th>Ticket de venta</th> --}}
@@ -25,9 +24,7 @@
                                 <tr>
                                     <td>{{ $venta->created_at }}</td>
                                     <td>{{ $venta->cliente->nombre }}</td>
-                                    <td><a class="btn btn-success" href="{{ route('formaPago.formaPago_index') }}">
-                                        <i class="bi bi-eye"></i>
-                                    </a></td>
+                                    
                                     <td>${{ number_format($venta->total, 2) }}</td>
                                     {{-- <td>
                                         <a class="btn btn-info" href="{{ route('ventas.ticket', ['id' => $venta->id]) }}">

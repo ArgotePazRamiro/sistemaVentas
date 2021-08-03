@@ -22,9 +22,22 @@ class CreateCreditosTable extends Migration
                 ->onDelete("set null");
             $table->string("codigo");
             $table->date("fechaLimite");
-            
             $table->double("aCuenta");
             $table->double("saldo");
+            $table->double("couta1")->nullable();
+            $table->date("fecha1")->nullable();
+
+            $table->double("couta2")->nullable();
+            $table->date("fecha2")->nullable();
+            $table->double("couta3")->nullable();
+            $table->date("fecha3")->nullable();
+            $table->double("couta4")->nullable();
+            $table->date("fecha4")->nullable();
+            $table->double("couta5")->nullable();
+            $table->date("fecha5")->nullable();
+            $table->double("couta6")->nullable();
+            $table->date("fecha6")->nullable();
+
             $table->timestamps();
         });
     }

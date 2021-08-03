@@ -78,25 +78,25 @@
                             <div class="form-group">
                                 <br>
                                 <h5>IMEI-NUMERO DE SERIE</h5>
-                                <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
+                                <input required autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
                                     name="codigo" id="codigo" placeholder="">
                             </div>
                             <div class="form-group">
                                 <br>
                                 <h5>aCuenta</h5>
-                                <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
+                                <input required autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
                                     name="aCuenta" id="aCuenta" placeholder="">
                             </div>
                             <div class="form-group">
                                 <br>
                                 <h5>saldo</h5>
-                                <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
+                                <input required autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="text"
                                     name="saldo" id="saldo" placeholder="">
                             </div>
                             <div class="form-group">
                                 <br>
                                 <h5>fechaLimite</h5>
-                                <input autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="date"
+                                <input required autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="date"
                                     name="fechaLimite" id="fechaLimite" placeholder="">
                             </div>
                             @if (session('productos') !== null)

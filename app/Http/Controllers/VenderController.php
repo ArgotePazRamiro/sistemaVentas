@@ -28,7 +28,13 @@ class VenderController extends Controller
         $venta = new Venta();
         $venta->id_cliente = $request->input("id_cliente");
         $venta->codigo = $request->input("codigo");
+        $venta->transferencia = $request->input("transferencia");
+        $venta->efectivo = $request->input("efectivo");
+        $venta->tarjeta = $request->input("tarjeta");
+        $venta->deposito = $request->input("deposito");
+
         $venta->saveOrFail();
+        
         $idVenta = $venta->id;
         $productos = $this->obtenerProductos();
 

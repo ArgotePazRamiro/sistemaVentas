@@ -44,7 +44,7 @@ Route::resource('personal','personalController')->names('personal');
 Route::resource("clientes","ClientesController");
 Route::resource("productos","ProductosController");
 Route::resource("tipoPago", "TipoPagoController");
-/* Route::resource("creditos", "CreditosController"); */
+/* Route::resource("creditos", "CreditosController");  */
 /* Route::resource("formaPago", "formaPagoController"); */
 Route::get("/formaPago", "formaPagoController@index")->name("formaPago.formaPago_index");
 
@@ -58,7 +58,10 @@ Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta"
 Route::post("/terminarVenta", "VenderController@terminarVenta")->name("terminarVenta");
 
 
+
 Route::get("/creditos", "CreditosController@index")->name("creditos.index");
+Route::get('/creditos/{creditos}/editar','CreditosController@edit')->name('creditos.edit');
+Route::patch('/creditos/{creditos}','CreditosController@update')->name('creditos.update');
 Route::get("/creditos/show", "CreditosController@show")->name("creditos.show");
 
 Route::post("/productoDeVent", "CreditosController@agregarProductoVent")->name("agregarProductoVent");
