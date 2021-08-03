@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductoVendidosTable extends Migration
+class CreateProductoCreditosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateProductoVendidosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos_vendidos', function (Blueprint $table) {
+        Schema::create('productos_creditos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("id_venta");
-            $table->foreign("id_venta")
+            $table->unsignedBigInteger("id_creditos");
+            $table->foreign("id_creditos")
                 ->references("id")
-                ->on("ventas")
+                ->on("creditos")
                 ->onDelete("cascade")
                 ->onUpdate("cascade");
             $table->string("nombre");

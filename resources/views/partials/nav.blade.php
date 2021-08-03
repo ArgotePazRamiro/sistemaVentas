@@ -33,6 +33,9 @@
             <li class="{{ setActive('vender.index') }}"><a href="{{ route('vender.index') }}"
                     class="nav-link scrollto"><i class="bi bi-cart-plus"></i>
                     <span>Vender</span></a></li>
+            <li class="{{ setActive('creditos.index') }}"><a href="{{ route('creditos.index') }}"
+                    class="nav-link scrollto"><i class="bx bx-book-content"></i>
+                    <span>Creditos</span></a></li>
             <li class="{{ setActive('ventas.index') }}"><a href="{{ route('ventas.index') }}"
                     class="nav-link scrollto"><i class="bx bx-book-content"></i>
                     <span>Ventas</span></a></li>

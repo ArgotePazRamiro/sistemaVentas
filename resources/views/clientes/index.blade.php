@@ -10,7 +10,7 @@
                     <a href="{{ route('clientes.create')}}"><button type="submit"  class="btn btn-lg btn-block">CREAR NUEVO CLIENTE <i class="bi bi-person-plus-fill"></i></button></a>
                 </div>
                 <div class="col-lg-12 d-flex align-items-stretch">
-                    <table class="table table-dark">
+                    <table class="table table-dark table-bordered border-light table-striped">
                         <thead>
                             <tr>
                                 <th>Nombre</th>

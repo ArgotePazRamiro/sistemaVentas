@@ -44,11 +44,12 @@ Route::resource('personal','personalController')->names('personal');
 Route::resource("clientes","ClientesController");
 Route::resource("productos","ProductosController");
 Route::resource("tipoPago", "TipoPagoController");
+/* Route::resource("creditos", "CreditosController"); */
 /* Route::resource("formaPago", "formaPagoController"); */
 Route::get("/formaPago", "formaPagoController@index")->name("formaPago.formaPago_index");
 
 Route::get("/ventas/ticket", "VentasController@ticket")->name("ventas.ticket");
-Route::resource('ventas','VentasController');
+Route::resource('ventas','VentasController'); 
 
 Route::get("/vender", "VenderController@index")->name("vender.index");
 Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
@@ -57,7 +58,13 @@ Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta"
 Route::post("/terminarVenta", "VenderController@terminarVenta")->name("terminarVenta");
 
 
+Route::get("/creditos", "CreditosController@index")->name("creditos.index");
+Route::get("/creditos/show", "CreditosController@show")->name("creditos.show");
 
+Route::post("/productoDeVent", "CreditosController@agregarProductoVent")->name("agregarProductoVent");
+Route::delete("/productoDeVent", "CreditosController@quitarProductoDeVent")->name("quitarProductoDeVent");
+Route::post("/terminarOCancelarVent", "CreditosController@terminarOCancelarVent")->name("terminarOCancelarVent");
+Route::post("/terminarVent", "CreditosController@terminarVent")->name("terminarVent");
 
 Auth::routes();
 
