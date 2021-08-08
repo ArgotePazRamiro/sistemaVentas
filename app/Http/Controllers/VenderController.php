@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Bancos;
 use App\Cliente;
 use App\Producto;
 use App\ProductoVendido;
+use App\users;
 use App\Venta;
-use App\tipoPago;
+
 
 use Illuminate\Http\Request;
 
@@ -27,11 +29,17 @@ class VenderController extends Controller
         // Crear una venta
         $venta = new Venta();
         $venta->id_cliente = $request->input("id_cliente");
+        $venta->id_users = $request->input("id_users");
+        $venta->id_bancos = $request->input("id_bancos");
         $venta->codigo = $request->input("codigo");
         $venta->transferencia = $request->input("transferencia");
         $venta->efectivo = $request->input("efectivo");
         $venta->tarjeta = $request->input("tarjeta");
         $venta->deposito = $request->input("deposito");
+        $venta->transferenciaD = $request->input("transferenciaD");
+        $venta->efectivoD = $request->input("efectivoD");
+        $venta->tarjetaD = $request->input("tarjetaD");
+        $venta->depositoD = $request->input("depositoD");
 
         $venta->saveOrFail();
         
@@ -171,7 +179,8 @@ class VenderController extends Controller
             [
                 "total" => $total,
                 "clientes" => Cliente::all(),
-                "tipoPagos" => TipoPago::all(), 
+                "bancos" => Bancos::all(),
+                "users" => users::all(),
             ]);
     }
 }

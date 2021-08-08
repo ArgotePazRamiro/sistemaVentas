@@ -43,7 +43,7 @@ Route::delete('/personal/{personal}','personalController@destroy')->name('person
 Route::resource('personal','personalController')->names('personal');
 Route::resource("clientes","ClientesController");
 Route::resource("productos","ProductosController");
-Route::resource("tipoPago", "TipoPagoController");
+Route::resource("bancos", "BancosController");
 /* Route::resource("creditos", "CreditosController");  */
 /* Route::resource("formaPago", "formaPagoController"); */
 Route::get("/formaPago", "formaPagoController@index")->name("formaPago.formaPago_index");

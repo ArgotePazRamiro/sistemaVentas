@@ -26,9 +26,9 @@
                     class="nav-link scrollto"><i class="bx bx-user"></i>
                     <span>Clientes</span></a></li>
 
-    {{--         <li class="{{ setActive('tipoPago.index') }}"><a href="{{ route('tipoPago.index') }}"
+            <li class="{{ setActive('bancos.index') }}"><a href="{{ route('bancos.index') }}"
                     class="nav-link scrollto"><i class="bi bi-cash"></i>
-                    <span>Tipo De Pago</span></a></li> --}}
+                    <span>Tipo De Pago</span></a></li>
 
             <li class="{{ setActive('vender.index') }}"><a href="{{ route('vender.index') }}"
                     class="nav-link scrollto"><i class="bi bi-cart-plus"></i>

@@ -20,6 +20,10 @@ class CreateVentasTable extends Migration
             $table->string('transferencia')->nullable();
             $table->string('tarjeta')->nullable();
             $table->string('deposito')->nullable();
+            $table->string('efectivoD')->nullable();
+            $table->string('transferenciaD')->nullable();
+            $table->string('tarjetaD')->nullable();
+            $table->string('depositoD')->nullable();
 
             $table->timestamps();
         });

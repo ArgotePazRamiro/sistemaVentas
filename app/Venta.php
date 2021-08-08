@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Venta extends Model
 {
-    protected $fillable = ["codigo","transferencia","efectivo","tarjeta","deposito"];
+    protected $fillable = ["codigo","transferencia","efectivo","tarjeta","deposito","transferenciaD","efectivoD","tarjetaD","depositoD"];
     public function productos()
     {
         return $this->hasMany("App\ProductoVendido", "id_venta");
@@ -18,9 +18,14 @@ class Venta extends Model
     {
         return $this->belongsTo("App\Cliente", "id_cliente");
     }
-    public function tipoPago()
+    public function bancos()
     {
-        return $this->belongsTo("App\TipoPago", "id_tipoPago");
+        return $this->belongsTo("App\Bancos", "id_bancos");
     }
+    public function users()
+    {
+        return $this->belongsTo("App\users", "id_users");
+    }
+    
     
 }

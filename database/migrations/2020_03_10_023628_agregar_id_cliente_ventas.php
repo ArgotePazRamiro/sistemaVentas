@@ -21,12 +21,18 @@ class AgregarIdClienteVentas extends Migration
                 ->onDelete("cascade")
                 ->onUpdate("cascade");
             
-            /* $table->unsignedBigInteger('id_tipoPago');
-            $table->foreign("id_tipoPago")
+            $table->unsignedBigInteger('id_bancos');
+            $table->foreign("id_bancos")
                 ->references("id")
-                ->on("tipopago")
+                ->on("bancos")
                 ->onDelete("cascade")
-                ->onUpdate("cascade"); */
+                ->onUpdate("cascade");
+            $table->unsignedBigInteger('id_users');
+            $table->foreign("id_users")
+                ->references("id")
+                ->on("users")
+                ->onDelete("cascade")
+                ->onUpdate("cascade");
         });
     }
 
