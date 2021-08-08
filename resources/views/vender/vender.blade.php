@@ -53,7 +53,7 @@
                                             aria-label=".form-select-lg example" name="id_bancos" id="id_bancos"
                                             placeholder="asdasd">
                                             @foreach ($bancos as $banco)
-                                                <option value="{{ $banco->id }}">{{ $banco->nombre}}-{{$banco->numeroCuenta}}</option>
+                                                <option value="{{ $banco->id }}">{{ $banco->nombre}}---{{$banco->numeroCuenta}}</option>
                                             @endforeach
                                         </select>
                                     </div>
