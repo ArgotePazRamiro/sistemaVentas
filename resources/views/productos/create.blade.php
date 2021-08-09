@@ -53,11 +53,13 @@
                         <input required autocomplete="off"
                         value="{{ old('stock') }}" name="stock" class="form-control" type="numeric"
                             placeholder="Stock">
+                    
                     </div>
 
-
+                    
                     <button class="btn btn-success">Guardar</button>
                     <a class="btn btn-primary" href="{{ route('productos.index') }}">Volver al listado</a>
+
                 </form>
             </div>
         {{-- </div> --}}

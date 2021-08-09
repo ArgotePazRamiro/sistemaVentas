@@ -23,12 +23,12 @@
                     <span>Almacen de Productos</span></a>
             </li>
             <li class="{{ setActive('clientes.index') }}"><a href="{{ route('clientes.index') }}"
-                    class="nav-link scrollto"><i class="bx bx-user"></i>
+                    class="nav-link scrollto"><i class="bx bx-usermore"></i>
                     <span>Clientes</span></a></li>
 
             <li class="{{ setActive('bancos.index') }}"><a href="{{ route('bancos.index') }}"
-                    class="nav-link scrollto"><i class="bi bi-cash"></i>
-                    <span>Tipo De Pago</span></a></li>
+                    class="nav-link scrollto"><i class="bi bi-bank"></i>
+                    <span>Bancos</span></a></li>
 
             <li class="{{ setActive('vender.index') }}"><a href="{{ route('vender.index') }}"
                     class="nav-link scrollto"><i class="bi bi-cart-plus"></i>

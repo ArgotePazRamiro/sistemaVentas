@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Producto;
+use App\ProductoAntiguo;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProjectRequest;
 
@@ -15,7 +16,7 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return view("productos.index", ["productos" => Producto::all()]);
+        return view("productos.index", ["productos" => Producto::all(),"productosA" => ProductoAntiguo::all()]);
     }
 
     /**

@@ -8,7 +8,7 @@
             <div class="col-12 col-sm-10 col-lg-9 mx-auto">
 
                 <div class="section-title">
-                    <h2>Agregar producto</h2>
+                    <h2>Agregar Producto Antiguo</h2>
                 </div>
                 @include('partials.validation-errors')
                 <form method="POST" action="{{ route('productoAntiguo.store') }}" class="bg-white py-3 px-4 shadow rounded">
@@ -54,10 +54,22 @@
                         value="{{ old('stock') }}" name="stock" class="form-control" type="numeric"
                             placeholder="Stock">
                     </div>
+                    <br>
 
+                    <div>
+                        <div class="row align-items-end">
+                            <div class="col-9">
+                                <button class="btn btn-success">Guardar</button>
+                                <a class="btn btn-primary" href="{{ route('productos.index') }}">Volver al listado</a>
+                            </div>
+                            
+                            <div class="col-3">
+                                <a class="btn btn-info" href="{{ route('vender.index') }}">Volver a la venta</a>
+                            </div>
+                          </div>
+                    </div>
+                    
 
-                    <button class="btn btn-success">Guardar</button>
-                    <a class="btn btn-primary" href="{{ route('productos.index') }}">Volver al listado</a>
                 </form>
             </div>
         {{-- </div> --}}

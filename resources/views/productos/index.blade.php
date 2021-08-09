@@ -18,7 +18,7 @@
                                 <th>Precio de compra</th>
                                 <th>Precio de venta</th>
                                 {{-- <th>Ganancia</th> --}}
-                                <th>Precio Comision</th>
+                                <th>Codigo</th>
 
                                 <th>Stock</th>
 
@@ -35,10 +35,10 @@
                                     <td>{{ $producto->precio_compra }}</td>
                                     <td>{{ $producto->precio_venta }}</td>
                                     {{-- <td>{{$producto->precio_venta - $producto->precio_compra}}</td> --}}
-                                    <td>{{ $producto->precio_comision }}</td>
-
-                                    <td>{{ $producto->stock }}</td>
+                                    <td>{{$producto->codigo}}</td>
+                                    <td>{{ $producto->stock }} </td>
                                     <td>
+                                        
                                         <a class="btn btn-warning" href="{{ route('productos.edit', [$producto]) }}">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
@@ -106,10 +106,12 @@
                                 <th>Nombre</th>
                                 <th>Categoria</th>
                                 <th>Marca</th>
+
                                 <th>Precio de compra</th>
                                 <th>Precio de venta</th>
                                 {{-- <th>Ganancia</th> --}}
-                                <th>Precio Comision</th>
+                                <td>Codigo</td>
+                                
 
                                 <th>Stock</th>
 
@@ -118,19 +120,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($productos as $producto)
+                            @foreach ($productosA as $productoA)
                                 <tr>
-                                    <td>{{ $producto->nombre }}</td>
-                                    <td>{{ $producto->categoria }}</td>
-                                    <td>{{ $producto->marca }}</td>
-                                    <td>{{ $producto->precio_compra }}</td>
-                                    <td>{{ $producto->precio_venta }}</td>
-                                    {{-- <td>{{$producto->precio_venta - $producto->precio_compra}}</td> --}}
-                                    <td>{{ $producto->precio_comision }}</td>
+                                    <td>{{ $productoA->nombre }}</td>
+                                    <td>{{ $productoA->categoria }}</td>
+                                    <td>{{ $productoA->marca }}</td>
 
-                                    <td>{{ $producto->stock }}</td>
+                                    <td>{{ $productoA->precio_compra }}</td>
+                                    <td>{{ $productoA->precio_venta }}</td>
+                                    <td>{{$producto->codigo}}</td>
+
+                                    {{-- <td>{{$producto->precio_venta - $producto->precio_compra}}</td> --}}
+                                    
+
+                                    <td>{{ $productoA->stock }}</td>
                                     <td>
-                                        <a class="btn btn-warning" href="{{ route('productoAntiguo.create', [$producto]) }}">
+                                        <a class="btn btn-warning" href="{{ route('productoAntiguo.create', [$productoA]) }}">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
                                     </td>
@@ -163,7 +168,7 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Cancelar</button>
-                                                        <form action="{{ route('productoAntiguo.create', [$producto]) }}"
+                                                        <form action="{{ route('productoAntiguo.create', [$productoA]) }}"
                                                             method="post">
                                                             @method("delete")
                                                             @csrf

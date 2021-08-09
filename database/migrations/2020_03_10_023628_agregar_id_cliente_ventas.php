@@ -33,6 +33,12 @@ class AgregarIdClienteVentas extends Migration
                 ->on("users")
                 ->onDelete("cascade")
                 ->onUpdate("cascade");
+            $table->unsignedBigInteger('id_productoA')->nullable();
+            $table->foreign("id_productoA")
+                ->references("id")
+                ->on("productosantiguos")
+                ->onDelete("cascade")
+                ->onUpdate("cascade");
         });
     }
 

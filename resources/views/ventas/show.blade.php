@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="row">
+<div class="container">
     <div class="col-12">
         <h1>Detalle de venta #{{$venta->id}}</h1>
         <h1>Cliente: <small>{{$venta->cliente->nombre}}</small></h1>
@@ -38,7 +38,7 @@
                     
 
                     <td>Bs. {{number_format($producto->precio, 2)}}</td>
-                    <td>{{$producto->cantidad}}</td>
+                    <td>{{number_format($producto->cantidad)}}</td>
                     <td>Bs. {{number_format($producto->cantidad * $producto->precio, 2)}}</td>
                 </tr>
 
@@ -51,7 +51,7 @@
                     <td>Bs. {{number_format($total, 2)}}</td>
                 </tr>
                 </tfoot>
-            <tfoot>
+            {{-- <tfoot>
                 <tr>
                     <td colspan="2" class="table-active"></td>
                 <td><strong>TRANSFERENCIA</strong></td>
@@ -66,7 +66,7 @@
                 <td>{{$venta->tarjeta}}</td>
                 <td>{{$venta->deposito}}</td>
                 </tr>
-                </tfoot>
+                </tfoot> --}}
             @endforeach
             
         </table>

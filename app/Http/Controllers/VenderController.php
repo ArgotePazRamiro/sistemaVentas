@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bancos;
 use App\Cliente;
 use App\Producto;
+use App\ProductoAntiguo;
 use App\ProductoVendido;
 use App\users;
 use App\Venta;
@@ -31,7 +32,9 @@ class VenderController extends Controller
         $venta->id_cliente = $request->input("id_cliente");
         $venta->id_users = $request->input("id_users");
         $venta->id_bancos = $request->input("id_bancos");
+        $venta->id_productoA = $request->input("id_productoA");
         $venta->codigo = $request->input("codigo");
+        $venta->precio = $request->input("precio");
         $venta->transferencia = $request->input("transferencia");
         $venta->efectivo = $request->input("efectivo");
         $venta->tarjeta = $request->input("tarjeta");
@@ -56,6 +59,7 @@ class VenderController extends Controller
                 "nombre" =>$producto->nombre,
                 "categoria"=>$producto->categoria,
                 "marca"=>$producto->marca,
+                "codigo"=>$producto->codigo,
                 "cantidad" =>$producto->cantidad,
                 "total" =>$producto->precio_compra,
                 "precio" =>$producto->precio_venta,
@@ -180,6 +184,7 @@ class VenderController extends Controller
                 "clientes" => Cliente::all(),
                 "bancos" => Bancos::all(),
                 "users" => users::all(),
+                "productosA" => ProductoAntiguo::all()
             ]);
     }
 }
