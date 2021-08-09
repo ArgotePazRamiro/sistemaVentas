@@ -20,8 +20,8 @@ class AgregarIdClienteVentas extends Migration
                 ->on("clientes")
                 ->onDelete("cascade")
                 ->onUpdate("cascade");
-            
-            $table->unsignedBigInteger('id_bancos');
+
+            $table->unsignedBigInteger('id_bancos')->nullable();
             $table->foreign("id_bancos")
                 ->references("id")
                 ->on("bancos")

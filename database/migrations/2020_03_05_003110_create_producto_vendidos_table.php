@@ -23,7 +23,7 @@ class CreateProductoVendidosTable extends Migration
                 ->onUpdate("cascade");
             $table->string("nombre");
             $table->string("categoria");
-            $table->string("precio_comision");
+            $table->string("codigo");
             $table->string("marca");
             $table->integer("total");
             $table->decimal("precio", 9, 2);

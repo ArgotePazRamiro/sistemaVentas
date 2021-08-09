@@ -23,7 +23,7 @@
                         <div class="col-6">
                             <form action="{{ route('terminarOCancelarVenta') }}" method="POST">
                                 @csrf
-                                
+
                                     <div class="form-group">
 
                                         <h4 for="id_cliente">CLIENTE <a href="{{ route('clientes.create') }}"
@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="form-group">
                                         <h4 for="id_bancos">BANCOS </h4>
-                                        <select required class="form-select border-warning form-select-lg mb-0"
+                                        <select class="form-select border-warning form-select-lg mb-0"
                                             aria-label=".form-select-lg example" name="id_bancos" id="id_bancos"
                                             placeholder="asdasd">
                                             @foreach ($bancos as $banco)
@@ -57,7 +57,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <br>
                                         <h5>IMEI-NUMERO DE SERIE</h5>
@@ -66,8 +66,8 @@
                                             name="codigo" id="codigo" placeholder="">
                                     </div>
                                 </div>
-                                
-                                
+
+
 
                                 <div class="container">
                                     <div class="row justify-content-start">
@@ -107,6 +107,23 @@
                                                 </div>
 
                                             </div>
+                                           {{--  <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <br>
+                                                    <h5>TARJETA $ <span class="dolar">(Dolar)</span></h5>
+                                                    <input autocomplete="off"
+                                                        class="form-control border-1 border-success bg-light shadow-sm"
+                                                        type="text" name="tarjetaD" id="tarjetaD" placeholder="Dolar $">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <br>
+                                                    <h5>DEPOSITO $ <span class="dolar">(Dolar)</span></h5>
+                                                    <input autocomplete="off"
+                                                        class="form-control border-1 border-success bg-light shadow-sm"
+                                                        type="text" name="depositoD" id="depositoD" placeholder="Dolar $">
+                                                </div>
+
+                                            </div> --}}
                                         </div>
                                         <div class="col-6">
                                             <div class="row">
@@ -156,7 +173,7 @@
 
                                         <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                             data-bs-target="#staticBackdrop">
-                                            TERMINAR VENTA A CREDITO
+                                            Terminar Venta
                                         </button>
                                         <button name="accion" value="cancelar" type="submit" class="btn btn-danger">
                                             Cancelar Venta
@@ -194,7 +211,7 @@
                                     </div>
                                 @endif
                             </form>
-                        
+
                     </div>
                 </div>
 

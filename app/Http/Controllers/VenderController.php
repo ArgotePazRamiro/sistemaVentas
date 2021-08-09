@@ -42,7 +42,7 @@ class VenderController extends Controller
         $venta->depositoD = $request->input("depositoD");
 
         $venta->saveOrFail();
-        
+
         $idVenta = $venta->id;
         $productos = $this->obtenerProductos();
 
@@ -50,16 +50,15 @@ class VenderController extends Controller
         foreach ($productos as $producto) {
             // El producto que se vende...
             $productoVendido = new ProductoVendido();
-            
+
             $productoVendido->fill([
                 "id_venta" => $idVenta,
                 "nombre" =>$producto->nombre,
                 "categoria"=>$producto->categoria,
-                "precio_comision"=>$producto->precio_comision,
                 "marca"=>$producto->marca,
                 "cantidad" =>$producto->cantidad,
                 "total" =>$producto->precio_compra,
-                "precio" =>$producto->precio_venta,  
+                "precio" =>$producto->precio_venta,
             ]);
             // Lo guardamos
             $productoVendido->saveOrFail();
@@ -67,11 +66,11 @@ class VenderController extends Controller
             $productoActualizado = Producto::find($producto->id);
             $productoActualizado->stock -= $productoVendido->cantidad;
             $productoActualizado->saveOrFail();
-        } 
+        }
         $this->vaciarProductos();
         return redirect()
             ->route("ventas.index")
-            ->with("status", "Venta terminada"); 
+            ->with("status", "Venta terminada");
     }
 
     private function obtenerProductos()
