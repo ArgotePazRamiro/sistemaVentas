@@ -95,9 +95,21 @@
                             </div>
                             <div class="form-group">
                                 <br>
-                                <h5>fechaLimite</h5>
+                                <h5>Primera Fecha Limite</h5>
                                 <input required autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="date"
                                     name="fechaLimite" id="fechaLimite" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <h5>Segunda Fecha Limite</h5>
+                                <input required autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="date"
+                                    name="fecha1" id="fecha1" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <h5>Tercera Fecha Limite</h5>
+                                <input required autocomplete="off" class="form-control border-2 bg-light shadow-sm" type="date"
+                                    name="fecha2" id="fecha2" placeholder="">
                             </div>
                             @if (session('productos') !== null)
                                 <div class="form-group">
@@ -137,7 +149,7 @@
                                                         class="btn btn-success">
                                                         Terminar Venta
                                                     </button>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>

@@ -21,7 +21,7 @@ class CreateProjectRequest extends FormRequest
      *
      * @return array
      */
-   
+
     public function rules()
     {
         return [
@@ -31,9 +31,9 @@ class CreateProjectRequest extends FormRequest
             'precio_compra'=>'numeric|required',
             'stock'=>'numeric|required',
             'precio_venta'=>'numeric|required',
-            'precio_comision'=>'numeric|required',
+            'codigo'=>'required',
         ];
-        
+
     }
     public function messages(){
         return [
@@ -44,8 +44,7 @@ class CreateProjectRequest extends FormRequest
             'precio_compra.required'=>'El Precio de compra es tipo entero, y obligatorio',
             'stock.numeric'=>'El stock debe ser de tipo numerico, y obligatorio',
             'precio_venta.numeric'=>'El precio de Venta debe ser de tipo numerico, y obligatorio',
-            'precio_comision.numeric'=>'El Precio de Comision debe ser de tipo numerico, y obligatorio',
-            
+
         ];
     }
 }

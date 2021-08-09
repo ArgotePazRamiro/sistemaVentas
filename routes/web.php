@@ -43,13 +43,14 @@ Route::delete('/personal/{personal}','personalController@destroy')->name('person
 Route::resource('personal','personalController')->names('personal');
 Route::resource("clientes","ClientesController");
 Route::resource("productos","ProductosController");
+Route::resource("productoAntiguo","ProductosAntiguosController");
 Route::resource("bancos", "BancosController");
 /* Route::resource("creditos", "CreditosController");  */
 /* Route::resource("formaPago", "formaPagoController"); */
 Route::get("/formaPago", "formaPagoController@index")->name("formaPago.formaPago_index");
 
 Route::get("/ventas/ticket", "VentasController@ticket")->name("ventas.ticket");
-Route::resource('ventas','VentasController'); 
+Route::resource('ventas','VentasController');
 
 Route::get("/vender", "VenderController@index")->name("vender.index");
 Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");

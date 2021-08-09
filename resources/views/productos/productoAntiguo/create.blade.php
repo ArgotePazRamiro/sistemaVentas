@@ -11,7 +11,7 @@
                     <h2>Agregar producto</h2>
                 </div>
                 @include('partials.validation-errors')
-                <form method="POST" action="{{ route('productos.store') }}" class="bg-white py-3 px-4 shadow rounded">
+                <form method="POST" action="{{ route('productoAntiguo.store') }}" class="bg-white py-3 px-4 shadow rounded">
                     @csrf
                     <div class="form-group">
                         <label class="title">Nombre</label>
