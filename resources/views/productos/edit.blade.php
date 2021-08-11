@@ -45,12 +45,12 @@
                            class="form-control"
                            type="numeric" placeholder="stock">
                 </div>
-                <div class="form-group">
+               {{--  <div class="form-group">
                     <label class="label">Precio Comision</label>
                     <input required value="{{$producto->precio_comision}}" autocomplete="off" name="precio_comision"
                            class="form-control"
                            type="decimal(9,2)" placeholder="precio comision">
-                </div>
+                </div> --}}
                 <button class="btn btn-success">Guardar</button>
                 <a class="btn btn-primary" href="{{route("productos.index")}}">Volver</a>
             </form>
