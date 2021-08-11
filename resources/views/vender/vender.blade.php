@@ -222,17 +222,16 @@
                 </div>
             </div>
 
-
-
-
-
-
-
-
             @if (session('productos') !== null)
                 <br>
-                <h2>Total: Bs {{ number_format($total, 2) }}</h2>
+                <h5>Total: Bs</h5>
+                <div class="form-group col-md-4">
+                    <input autocomplete="off"
+                        class="form-control border-1 border-info bg-light shadow-sm" type="text"
+                        name="" id="" placeholder="{{ number_format($total, 2) }}">
+                </div>
                 <div class="table-responsive">
+                    <br>
                     <table class="table table-striped table-dark table-bordered border-warning">
                         <thead>
                             <tr>

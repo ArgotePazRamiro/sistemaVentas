@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Producto;
+use Illuminate\Support\Facades\DB;
 use App\ProductoAntiguo;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProjectRequest;
@@ -16,7 +17,12 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return view("productos.index", ["productos" => Producto::all(),"productosA" => ProductoAntiguo::all()]);
+        $productos = Producto::latest()->paginate(10);
+        $productosA = ProductoAntiguo::latest()->paginate(10);
+        return view('productos.index',[
+            'productos'=>$productos,
+            'productosA'=>$productosA
+        ]);
     }
 
     /**

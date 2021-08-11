@@ -38,7 +38,7 @@
                                     <td>{{$producto->codigo}}</td>
                                     <td>{{ $producto->stock }} </td>
                                     <td>
-                                        
+
                                         <a class="btn btn-warning" href="{{ route('productos.edit', [$producto]) }}">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
@@ -93,8 +93,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $productos->links() }}
                 </div>
             </div>
+
             <div class="col-12">
                 <h1>Productos Antiguos<i class="fa fa-box"></i></h1>
                 <a href="{{ route('productoAntiguo.create') }}" class="btn btn-success mb-2">Agregar</a>
@@ -111,7 +113,7 @@
                                 <th>Precio de venta</th>
                                 {{-- <th>Ganancia</th> --}}
                                 <td>Codigo</td>
-                                
+
 
                                 <th>Stock</th>
 
@@ -131,7 +133,7 @@
                                     <td>{{$producto->codigo}}</td>
 
                                     {{-- <td>{{$producto->precio_venta - $producto->precio_compra}}</td> --}}
-                                    
+
 
                                     <td>{{ $productoA->stock }}</td>
                                     <td>
@@ -185,9 +187,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $productos->links() }}
                 </div>
             </div>
-
         </div>
 
     </section><!-- End Section -->

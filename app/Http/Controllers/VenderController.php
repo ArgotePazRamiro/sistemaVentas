@@ -43,7 +43,6 @@ class VenderController extends Controller
         $venta->efectivoD = $request->input("efectivoD");
         $venta->tarjetaD = $request->input("tarjetaD");
         $venta->depositoD = $request->input("depositoD");
-
         $venta->saveOrFail();
 
         $idVenta = $venta->id;
@@ -118,7 +117,7 @@ class VenderController extends Controller
     public function agregarProductoVenta(Request $request)
     {
         $nombre = $request->post("nombre");
-        $producto = Producto::where("nombre", "=", $nombre)->first();
+        $producto = Producto::where("codigo", "=", $nombre)->first();
         if (!$producto) {
             return redirect()
                 ->route("vender.index")
